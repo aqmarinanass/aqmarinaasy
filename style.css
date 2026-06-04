@@ -1,1 +1,68 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #E5E7E9; /* Warna awal abu-abu netral */
+    margin: 0;
+    padding: 50px 20px;
+    text-align: center;
+}
 
+.kotak-utama {
+    background-color: white;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 15px;
+    border: 5px solid #4C97FF; /* Warna Biru khas Scratch */
+    box-shadow: 0 10px 0px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #4C97FF;
+    margin-top: 0;
+}
+
+textarea {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+select, button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+select {
+    border: 2px solid #4C97FF;
+}
+
+button {
+    background-color: #FF6680; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 0px #D84B65;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.teks-ucapan {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.sembunyi {
+    display: none;
+}
