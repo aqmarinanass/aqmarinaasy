@@ -25,6 +25,10 @@ function buatLink() {
     const temaUser = document.getElementById('pilihan-tema').value;
     }
 
+if (!pesanUser.trim()) {
+        alert("Eits, ketik dulu pesan ucapanmu dari kamu!");
+        return;
+    }
     const linkAsli = window.location.href.split('?')[0];
     const linkJadi = `${linkAsli}?tema=${temaUser}&pesan=${encodeURIComponent(pesanUser)}`;
 
