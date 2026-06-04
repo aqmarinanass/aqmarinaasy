@@ -25,11 +25,9 @@ function buatLink() {
     const temaUser = document.getElementById('pilihan-tema').value;
     }
 
-    // Menggabungkan alamat website dengan data tema & pesan
     const linkAsli = window.location.href.split('?')[0];
     const linkJadi = `${linkAsli}?tema=${temaUser}&pesan=${encodeURIComponent(pesanUser)}`;
 
-    // Menyalin link otomatis ke memori HP/Laptop
     navigator.clipboard.writeText(linkJadi).then(() => {
         alert("🎉 Link ucapan berhasil disalin! Silakan langsung paste (tempel) dan kirim ke WA temanmu.");
     });
