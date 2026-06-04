@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Ucapan Scratch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div id="halaman-pengirim" class="kotak-utama">
+        <h2>Buat Ucapan Berwarna 🎨</h2>
+        
+        <textarea id="input-pesan" placeholder="Ketik ucapanmu di sini..."></textarea>
+        
+        <select id="pilihan-tema">
+            <option value="biasa">Tema: Biasa (Biru)</option>
+            <option value="lebaran">Tema: Lebaran (Hijau)</option>
+            <option value="ultah">Tema: Ulang Tahun (Kuning)</option>
+            <option value="cinta">Tema: Cinta (Merah)</option>
+        </select>
+        
+        <button onclick="buatLink()">Salin Link Ucapan</button>
+    </div>
+
+    <div id="halaman-penerima" class="kotak-utama sembunyi">
+        <p id="output-pesan" class="teks-ucapan"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
