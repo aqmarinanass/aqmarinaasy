@@ -145,12 +145,17 @@ p {
 .surat-box {
   background-color: rgba(255, 255, 255, 0.06);
   border: 1.5px dashed rgba(255, 255, 255, 0.25);
-  padding: 15px;
-  border-radius: 8px;
+  padding: 20px;
+  border-radius: 12px;
   max-width: 320px;
-  margin: 8px auto;
-  min-height: 70px;
+  margin: 15px auto;
+  min-height: 100px;
   word-wrap: break-word;
+  
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
 }
 
 .kue-wadah {
