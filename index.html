@@ -19,10 +19,10 @@
         <div id="menu-tema" class="hidden">
             <h1>Pilih Tema Surat</h1>
             <p>Pilih suasana ucapan yang ingin kamu buat:</p>
-            <button class="btn btn-lebaran" onclick="setTema('lebaran')">Lebaran </button>
-            <button class="btn btn-cinta" onclick="setTema('cinta')">Ungkapan Cinta </button>
-            <button class="btn btn-ultah" onclick="setTema('ultah')">Ulang Tahun </button>
-            <button class="btn btn-biasa" onclick="setTema('biasa')">Biasa / Kasual </button>
+            <button class="btn btn-lebaran" onclick="setTema('lebaran')">Lebaran</button>
+            <button class="btn btn-cinta" onclick="setTema('cinta')">Ungkapan Cinta</button>
+            <button class="btn btn-ultah" onclick="setTema('ultah')">Ulang Tahun</button>
+            <button class="btn btn-biasa" onclick="setTema('biasa')">Biasa / Kasual</button>
             <br><br>
             <button class="btn btn-secondary" onclick="kembaliKeAwal()">← Kembali</button>
         </div>
@@ -33,27 +33,29 @@
             <button class="btn" onclick="pilihMode('desain')">Ingin Membuat Desain</button>
             <button class="btn btn-secondary" onclick="pilihMode('instan')">Menggunakan Desain yang Tersedia</button>
             <br><br>
-            <button class="btn btn-secondary" onclick="kembaliKeTema()">← Ganti Tema ucapan</button>
+            <button class="btn btn-secondary" onclick="kembaliKeTema()">← Ganti Tema Acara</button>
         </div>
 
         <div id="area-desain" class="hidden">
-            <h2>Desain Kue & Suratmu</h2>
-            <div class="kue-wadah">
-                <svg class="kue-svg" viewBox="0 0 100 100">
-                    <rect x="47" y="10" width="6" height="15" fill="#ffa500"/>
-                    <circle cx="50" cy="5" r="4" fill="#ff4500"/>
-                    <path id="kue-badan-desain" d="M20,50 L80,50 L75,90 L25,90 Z" fill="#4ea8de" stroke="#333" stroke-width="2"/>
-                    <path d="M18,50 Q30,40 40,50 Q50,40 60,50 Q70,40 82,50 L80,55 L20,55 Z" fill="#ffffff" stroke="#333" stroke-width="1"/>
-                </svg>
-            </div>
-
-            <p>Pilih warna kuemu:</p>
-            <div class="palet-warna">
-                <div class="kotak-warna" style="background-color: #ffb6c1;" onclick="pilihWarnaKue('#ffb6c1')"></div>
-                <div class="kotak-warna" style="background-color: #ff7ff5;" onclick="pilihWarnaKue('#ff7ff5')"></div>
-                <div class="kotak-warna" style="background-color: #7bed9f;" onclick="pilihWarnaKue('#7bed9f')"></div>
-                <div class="kotak-warna" style="background-color: #4ea8de;" onclick="pilihWarnaKue('#4ea8de')"></div>
-                <div class="kotak-warna" style="background-color: #eccc68;" onclick="pilihWarnaKue('#eccc68')"></div>
+            <h2>Tulis & Atur Suratmu</h2>
+            
+            <div id="fitur-kue-desain">
+                <div class="kue-wadah">
+                    <svg class="kue-svg" viewBox="0 0 100 100">
+                        <rect x="47" y="10" width="6" height="15" fill="#ffa500"/>
+                        <circle cx="50" cy="5" r="4" fill="#ff4500"/>
+                        <path id="kue-badan-desain" d="M20,50 L80,50 L75,90 L25,90 Z" fill="#4ea8de" stroke="#333" stroke-width="2"/>
+                        <path d="M18,50 Q30,40 40,50 Q50,40 60,50 Q70,40 82,50 L80,55 L20,55 Z" fill="#ffffff" stroke="#333" stroke-width="1"/>
+                    </svg>
+                </div>
+                <p>Pilih warna kuemu:</p>
+                <div class="palet-warna">
+                    <div class="kotak-warna" style="background-color: #ffb6c1;" onclick="pilihWarnaKue('#ffb6c1')"></div>
+                    <div class="kotak-warna" style="background-color: #ff7ff5;" onclick="pilihWarnaKue('#ff7ff5')"></div>
+                    <div class="kotak-warna" style="background-color: #7bed9f;" onclick="pilihWarnaKue('#7bed9f')"></div>
+                    <div class="kotak-warna" style="background-color: #4ea8de;" onclick="pilihWarnaKue('#4ea8de')"></div>
+                    <div class="kotak-warna" style="background-color: #eccc68;" onclick="pilihWarnaKue('#eccc68')"></div>
+                </div>
             </div>
 
             <p>Tulis ucapan kamu:</p>
@@ -68,10 +70,10 @@
         </div>
 
         <div id="area-instan" class="hidden">
-            <h2>Surat Ucapan Instan ✉️</h2>
+            <h2>Surat Ucapan Instan</h2>
             <p>(Hiasan otomatis rapi sesuai tema, tinggal ketik ucapan pengirim!)</p>
             
-            <div class="kue-wadah">
+            <div id="fitur-kue-instan" class="kue-wadah">
                 <svg class="kue-svg" viewBox="0 0 100 100">
                     <rect x="47" y="10" width="6" height="15" fill="#ffa500"/>
                     <circle cx="50" cy="5" r="4" fill="#ff4500"/>
