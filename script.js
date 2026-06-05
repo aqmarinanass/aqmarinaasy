@@ -11,7 +11,7 @@ function kembaliKeAwal() {
 }
 
 function setTema(namaTema) {
-    temaAktif = namaTema; 
+    temaAktif = namaTema;
     
     document.body.className = '';
     document.body.classList.add('tema-' + namaTema);
@@ -24,13 +24,21 @@ function setTema(namaTema) {
     const inputInstan = document.getElementById('teks-input-instan');
 
     if (namaTema === 'lebaran') {
+        if(judulUtama) judulUtama.innerText = "Tema: Idul Fitri 🌙";
+        if(hiasanAtas) hiasanAtas.innerText = "🌙 ✨ 🕌 ✨ 🌙";
         if(hiasanBawah) hiasanBawah.innerText = "✨ Ketupat & Berkah ✨";
     } else if (namaTema === 'cinta') {
+        if(judulUtama) judulUtama.innerText = "Tema: Ungkapan Cinta ❤️";
+        if(hiasanAtas) hiasanAtas.innerText = "❤️ ✨ 🎀 ✨ ❤️";
         if(hiasanBawah) hiasanBawah.innerText = "💖 Selalu Bersamamu 💖";
     } else if (namaTema === 'ultah') {
+        if(judulUtama) judulUtama.innerText = "Tema: Ulang Tahun 🎂";
+        if(hiasanAtas) hiasanAtas.innerText = "🎈 ✨ 🎂 ✨ 🎈";
         if(hiasanBawah) hiasanBawah.innerText = "🎉 Tiup Lilinnya! 🎉";
         if(kueInstan) kueInstan.style.fill = "#ff7ff5";
     } else {
+        if(judulUtama) judulUtama.innerText = "Tema: Kasual ✉️";
+        if(hiasanAtas) hiasanAtas.innerText = "✉️ ✨ ⭐ ✨ ✉️";
         if(hiasanBawah) hiasanBawah.innerText = "✨ Salam Hangat ✨";
     }
 
@@ -93,7 +101,6 @@ function updateUcapan(mode) {
     }
 }
 
-// 1. Fungsi buat generate link kustom dan otomatis menyalin ke clipboard
 function bagikanLink(mode) {
     let teksPesan = "";
     if (mode === 'desain') {
@@ -103,50 +110,46 @@ function bagikanLink(mode) {
     }
 
     if (!teksPesan) {
-        alert("Ketik ucapan kamu dulu sebelum mengirim ya!");
+        alert("Ketik dulu ucapan kamu sebelum membuat link ya!");
         return;
     }
 
-    // Mengubah teks ucapan jadi kode aman untuk URL
     const pesanAman = encodeURIComponent(teksPesan);
-    
-    // Menyusun link kustom bawaan tema dan pesan
     const linkHasil = `${window.location.origin}${window.location.pathname}?tema=${temaAktif}&mode=${mode}&pesan=${pesanAman}`;
 
-    // Proses copy otomatis ke clipboard laptop/HP
     navigator.clipboard.writeText(linkHasil).then(() => {
-        alert("✨ Link ucapan berhasil dibuat dan disalin! Tinggal kamu paste (Ctrl+V) dan kirim ke WhatsApp temanmu ya!");
+        alert(" Sukses! Link surat ucapan berhasil disalin. Tinggal kamu kirimkan ke WhatsApp temanmu!");
     }).catch(err => {
-        alert("Gagal menyalin link otomatis. Ini link kamu: " + linkHasil);
+        alert("Gagal menyalin otomatis, silakan salin link ini: " + linkHasil);
     });
 }
 
+// Deteksi link kiriman orang lain
 window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const paramTema = urlParams.get('tema');
     const paramMode = urlParams.get('mode');
     const paramPesan = urlParams.get('pesan');
 
-    // Jika ada kiriman pesan di URL, langsung bypass lompat ke tampilan surat
     if (paramTema && paramPesan) {
-        // Sembunyikan halaman awal
         document.getElementById('halaman-awal').classList.add('hidden');
-        
-        // Atur tema body agar neon kotaknya berubah
-        document.body.className = 'tema-' + paramTema;
+        document.body.className = '';
+        document.body.classList.add('tema-' + paramTema);
         temaAktif = paramTema;
 
+        // Sembunyikan tombol share dan kembali saat membaca link kiriman orang
         if (paramMode === 'desain') {
             document.getElementById('area-desain').classList.remove('hidden');
-            document.getElementById('fitur-kue-desain').classList.add('hidden'); // Sembunyikan editor kuenya karena ini mode baca
-            document.getElementById('teks-input-desain').classList.add('hidden'); // Sembunyikan tempat mengetik
+            if(document.getElementById('fitur-kue-desain')) document.getElementById('fitur-kue-desain').classList.add('hidden');
+            document.getElementById('teks-input-desain').classList.add('hidden');
             document.getElementById('tampilan-ucapan-desain').innerText = decodeURIComponent(paramPesan);
+            const groupBtn = document.querySelector('#area-desain .button-group');
+            if(groupBtn) groupBtn.classList.add('hidden');
         } else {
             document.getElementById('area-instan').classList.remove('hidden');
-            document.getElementById('fitur-kue-instan').classList.add('hidden');
+            if(document.getElementById('fitur-kue-instan')) document.getElementById('fitur-kue-instan').classList.add('hidden');
             document.getElementById('teks-input-instan').classList.add('hidden');
             
-            // Atur hiasan dekorasi atas bawah sesuai tema kiriman
             const hiasanAtas = document.getElementById('hiasan-atas-instan');
             const hiasanBawah = document.getElementById('hiasan-bawah-instan');
             if(paramTema === 'lebaran') {
@@ -158,6 +161,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             
             document.getElementById('tampilan-ucapan-instan').innerText = decodeURIComponent(paramPesan);
+            const groupBtn = document.querySelector('#area-instan .button-group');
+            if(groupBtn) groupBtn.classList.add('hidden');
         }
     }
 });
