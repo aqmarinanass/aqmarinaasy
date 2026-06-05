@@ -1,3 +1,5 @@
+let temaAktif = 'biasa';
+
 function mulaiAplikasi() {
     document.getElementById('halaman-awal').classList.add('hidden');
     document.getElementById('menu-tema').classList.remove('hidden');
@@ -9,6 +11,8 @@ function kembaliKeAwal() {
 }
 
 function setTema(namaTema) {
+    temaAktif = namaTema; 
+    
     document.body.className = '';
     document.body.classList.add('tema-' + namaTema);
     
@@ -20,25 +24,14 @@ function setTema(namaTema) {
     const inputInstan = document.getElementById('teks-input-instan');
 
     if (namaTema === 'lebaran') {
-        if(judulUtama) judulUtama.innerText = "Tema: Idul Fitri 🌙";
-        if(hiasanAtas) hiasanAtas.innerText = "🌙 ✨ 🕌 ✨ 🌙";
         if(hiasanBawah) hiasanBawah.innerText = "✨ Ketupat & Berkah ✨";
-        if(kueInstan) kueInstan.style.fill = "#7bed9f";
     } else if (namaTema === 'cinta') {
-        if(judulUtama) judulUtama.innerText = "Tema: Ungkapan Cinta ❤️";
-        if(hiasanAtas) hiasanAtas.innerText = "❤️ ✨ 🎀 ✨ ❤️";
         if(hiasanBawah) hiasanBawah.innerText = "💖 Selalu Bersamamu 💖";
-        if(kueInstan) kueInstan.style.fill = "#ffb6c1";
     } else if (namaTema === 'ultah') {
-        if(judulUtama) judulUtama.innerText = "Tema: Ulang Tahun 🎂";
-        if(hiasanAtas) hiasanAtas.innerText = "🎈 ✨ 🎂 ✨ 🎈";
         if(hiasanBawah) hiasanBawah.innerText = "🎉 Tiup Lilinnya! 🎉";
         if(kueInstan) kueInstan.style.fill = "#ff7ff5";
     } else {
-        if(judulUtama) judulUtama.innerText = "Tema: Kasual ✉️";
-        if(hiasanAtas) hiasanAtas.innerText = "✉️ ✨ ⭐ ✨ ✉️";
         if(hiasanBawah) hiasanBawah.innerText = "✨ Salam Hangat ✨";
-        if(kueInstan) kueInstan.style.fill = "#4ea8de";
     }
 
     if(inputDesain) inputDesain.value = '';
@@ -60,6 +53,18 @@ function kembaliKeTema() {
 
 function pilihMode(mode) {
     document.getElementById('menu-utama').classList.add('hidden');
+    
+    const wadahKueDesain = document.getElementById('fitur-kue-desain');
+    const wadahKueInstan = document.getElementById('fitur-kue-instan');
+
+    if (temaAktif === 'ultah') {
+        if(wadahKueDesain) wadahKueDesain.classList.remove('hidden');
+        if(wadahKueInstan) wadahKueInstan.classList.remove('hidden');
+    } else {
+        if(wadahKueDesain) wadahKueDesain.classList.add('hidden');
+        if(wadahKueInstan) wadahKueInstan.classList.add('hidden');
+    }
+
     if (mode === 'desain') {
         document.getElementById('area-desain').classList.remove('hidden');
     } else if (mode === 'instan') {
