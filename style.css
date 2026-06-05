@@ -63,13 +63,13 @@ body {
 
 .container {
   background-color: var(--bg-container);
-  width: 100%;
-  max-width: 380px; 
-  padding: 25px 20px;
-  border-radius: 16px;
+  width: 95%;          
+  max-width: 500px;
+  padding: 30px;     
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 0 20px var(--warna-neon);
-  transition: all 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  margin: 20px auto;  
 }
 
 h1, h2 {
