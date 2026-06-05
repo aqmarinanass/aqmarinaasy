@@ -1,3 +1,7 @@
+function mulaiAplikasi() {
+    document.getElementById('halaman-awal').classList.add('hidden');
+    document.getElementById('menu-tema').classList.remove('hidden');
+}
 let temaAktif = 'biasa';
 
 function setTema(namaTema) {
