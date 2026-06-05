@@ -84,61 +84,32 @@ p {
   opacity: 0.85;
 }
 
-/* ==========================================
-   3. TOMBOL (PASTI VERTIKAL & LEBAR PENUH)
-   ========================================== */
-/* 3. TOMBOL (PASTI VERTIKAL & LEBAR PENUH) */
+
 .btn {
   display: block !important;      
   width: 100% !important;       
   padding: 12px !important;           
   margin: 0 auto 12px auto !important;   
   max-width: 320px !important;         
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border: 2px solid transparent !important; /* Biar lebih tegas */
   border-radius: 12px !important;
   font-size: 16px !important;
   font-weight: 600 !important;
   cursor: pointer !important;
-  transition: all 0.2s ease !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
   color: #ffffff !important; 
-  backdrop-filter: blur(5px) !important;
+  
+  background-color: #4f5d73 !important; /* Default abu-abu */
 }
 
-.btn:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.2);
-}
+/* WARNA SOLID (Jreng dan Tidak Transparan) */
+.btn-biasa { background-color: #29b6f6 !important; border-color: #03a9f4 !important; }
+.btn-lebaran { background-color: #2ecc71 !important; border-color: #27ae60 !important; }
+.btn-cinta { background-color: #ff477e !important; border-color: #e83e8c !important; }
+.btn-ultah { background-color: #b784bf !important; border-color: #9b59b6 !important; }
+.btn-secondary { background-color: #4f5d73 !important; border-color: #37474f !important; }
 
-/* WARNA SOLID TOMBOL */
-.btn-biasa {
-  background-color: #29b6f6 !important;
-  border-color: #4fc3f7 !important;
-}
 
-.btn-lebaran {
-  background-color: #2ecc71 !important;
-  border-color: #40e0d0 !important;
-}
-
-.btn-cinta {
-  background-color: #ff477e !important;
-  border-color: #ff6b95 !important;
-}
-
-.btn-ultah {
-  background-color: #b784bf !important;
-  border-color: #d2a7da !important;
-}
-
-.btn-secondary {
-  background-color: #4f5d73 !important;
-  border-color: #6c7a93 !important;
-}
-
-/* ==========================================
-   4. INPUT, KOTAK SURAT & PALET KUE
-   ========================================== */
 .button-group {
   display: flex;
   gap: 8px;
