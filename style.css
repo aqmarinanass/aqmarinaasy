@@ -46,7 +46,6 @@ body.tema-ultah {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Saklar pembasmi menu menumpuk */
 .hidden {
   display: none !important;
 }
@@ -62,7 +61,6 @@ body {
   transition: all 0.4s ease;
 }
 
-/* Ukuran kotak dikunci 380px biar langsing di laptop & HP */
 .container {
   background-color: var(--bg-container);
   width: 100%;
@@ -87,54 +85,54 @@ p {
 }
 
 /* ==========================================
-   3. TOMBOL RAPAT & WARNA SOLID TEBAL
+   3. TOMBOL (PASTI VERTIKAL & LEBAR PENUH)
    ========================================== */
-.btn {
-  display: block;     
-  width: 100%;       
-  padding: 12px;
-  /* Jarak vertikal dipersempit biar kotak atas-bawah gak jauhan */
-  margin: 0 auto 6px auto; 
-  max-width: 320px;         
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  font-size: 15px;
+.btn, button {
+  display: block !important;      
+  width: 100% !important;       
+  padding: 12px !important;           
+  margin: 0 auto 12px auto !important;   
+  max-width: 320px !important;         
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff !important; 
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
 }
 
-.btn:hover {
+.btn:hover, button:hover {
   transform: translateY(-1px);
   filter: brightness(1.2);
 }
 
-/* WARNA DIKUNCI SOLID (Tidak Transparan Tipis Lagi) */
+/* WARNA SOLID TOMBOL */
 .btn-biasa {
   background-color: #29b6f6 !important;
-  border-color: #4fc3f7;
+  border-color: #4fc3f7 !important;
 }
 
 .btn-lebaran {
   background-color: #2ecc71 !important;
-  border-color: #40e0d0;
+  border-color: #40e0d0 !important;
 }
 
 .btn-cinta {
   background-color: #ff477e !important;
-  border-color: #ff6b95;
+  border-color: #ff6b95 !important;
 }
 
 .btn-ultah {
   background-color: #b784bf !important;
-  border-color: #d2a7da;
+  border-color: #d2a7da !important;
 }
 
 .btn-secondary {
   background-color: #4f5d73 !important;
-  border-color: #6c7a93;
+  border-color: #6c7a93 !important;
 }
 
 /* ==========================================
@@ -147,9 +145,9 @@ p {
   margin: 15px auto 0 auto;
 }
 
-.button-group .btn {
+.button-group .btn, .button-group button {
   flex: 1;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .input-ucapan {
