@@ -44,16 +44,22 @@ p {
     opacity: 0.9;
 }
 
-
 .hidden {
     display: none !important;
 }
 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .btn {
     display: block !important;
-    width: 100% !important;
+    width: 90% !important;
     max-width: 300px;
-    margin: 12px auto !important;
+    margin: 10px auto !important;
     padding: 14px 20px;
     font-size: 16px;
     font-weight: bold;
@@ -62,6 +68,8 @@ p {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn:hover {
@@ -75,12 +83,18 @@ p {
 .btn-ultah { background-color: #ff7ff5; color: #fff; }
 .btn-secondary { background-color: #747d8c; color: #fff; }
 
-
-#menu-tema, #menu-utama, #halaman-awal {
+.button-group {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    gap: 12px;
+    justify-content: center;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.button-group .btn {
+    flex: 1;
+    margin: 0 !important;
+    width: auto !important;
 }
 
 .kue-wadah {
@@ -98,12 +112,12 @@ p {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .kotak-warna {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #ffffff;
@@ -115,10 +129,10 @@ p {
 }
 
 .input-ucapan {
-    width: 100%;
+    width: 90%;
     height: 120px;
     padding: 12px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.3);
     background: rgba(0, 0, 0, 0.2);
     color: #fff;
@@ -135,22 +149,11 @@ p {
 .surat-box {
     background: #ffffff;
     color: #2f3542;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 25px;
+    border-radius: 15px;
     border: 2px dashed #4ea8de;
+    width: 90%;
     margin-bottom: 20px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
     word-wrap: break-word;
-}
-
-.button-group {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    width: 100%;
-}
-
-.button-group .btn {
-    flex: 1;
-    margin: 0 !important;
 }
