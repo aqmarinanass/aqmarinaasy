@@ -1,6 +1,9 @@
 // Fungsi Membuka Pilihan Mode Buat
 function pilihMode(mode) {
-    document.getElementById('menu-utama').classList.add('hidden');
+  const menuUtama = document.getElementById('menu-utama');
+if (menuUtama) {
+    menuUtama.classList.add('hidden');
+}
     
     // Cek tema aktif berdasarkan class di body
     let temaAktif = 'biasa';
