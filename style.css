@@ -1,68 +1,92 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background: #E5E7E9; /* Warna awal abu-abu netral */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin: 0;
-    padding: 50px 20px;
-    text-align: center;
+    padding: 20px;
+    background-color: #0b132b; 
 }
 
-.kotak-utama {
-    background-color: white;
-    max-width: 500px;
-    margin: 0 auto;
+.container {
+    background-color: #1c2541; 
     padding: 30px;
-    border-radius: 15px;
-    border: 5px solid #4C97FF; /* Warna Biru khas Scratch */
-    box-shadow: 0 10px 0px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid #3a506b;
 }
 
-h2 {
-    color: #4C97FF;
-    margin-top: 0;
+h1, h2 {
+    color: #4ea8de; 
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px rgba(78, 168, 222, 0.3);
 }
 
-textarea {
-    width: 90%;
-    height: 100px;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+p {
+    color: #dbdbdb; 
 }
 
-select, button {
-    width: 95%;
-    padding: 12px;
-    margin-top: 15px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-select {
-    border: 2px solid #4C97FF;
-}
-
-button {
-    background-color: #FF6680; 
-    color: white;
+.btn {
+    color: #0b132b;
     border: none;
+    padding: 12px 25px;
+    font-size: 15px;
+    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 0px #D84B65;
-}
-
-button:active {
-    transform: translateY(4px);
-    box-shadow: none;
-}
-
-.teks-ucapan {
-    font-size: 24px;
-    color: #333;
-    line-height: 1.6;
+    margin: 10px 5px;
+    transition: all 0.3s;
     font-weight: bold;
 }
-
-.sembunyi {
-    display: none;
+.btn:hover { 
+    transform: scale(1.05); 
+    filter: brightness(1.2);
 }
+
+.btn-lebaran { background-color: #7bed9f; color: #0b132b; } 
+.btn-cinta { background-color: #ffb6c1; color: #0b132b; }   
+.btn-ultah { background-color: #ff7ff5; color: white; }     
+.btn-biasa { background-color: #4ea8de; color: #0b132b; }   
+
+.btn-secondary { background-color: #3a506b; color: white; }
+.btn-secondary:hover { background-color: #5c718e; }
+
+.hidden { display: none; }
+
+.kue-wadah { margin: 15px auto; width: 140px; }
+.kue-svg { width: 100%; height: auto; }
+.palet-warna { display: flex; justify-content: center; gap: 10px; margin: 15px 0; }
+
+.kotak-warna {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.kotak-warna:hover { transform: scale(1.2); }
+
+.input-ucapan {
+    width: 90%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #3a506b;
+    border-radius: 10px;
+    font-family: inherit;
+    resize: none;
+    margin-top: 10px;
+    background-color: #0b132b;
+    color: white;
+}
+
+.surat-box {
+    border: 2px dashed #4ea8de;
+    background-color: #151d33;
+    padding: 20px;
+    border-radius: 15px
