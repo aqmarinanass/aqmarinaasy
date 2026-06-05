@@ -14,17 +14,20 @@ body {
     background-color: #1c2541; 
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     text-align: center;
     max-width: 500px;
     width: 100%;
-    border: 1px solid #3a506b;
+    
+    border: 2px solid #4ea8de;
+    box-shadow: 0 0 15px #4ea8de, 
+                0 0 35px rgba(78, 168, 222, 0.5), 
+                inset 0 0 15px rgba(78, 168, 222, 0.3);
 }
 
 h1, h2 {
     color: #4ea8de; 
     margin-bottom: 5px;
-    text-shadow: 0 0 5px rgba(78, 168, 222, 0.3);
+    text-shadow: 0 0 8px #4ea8de;
 }
 
 p {
@@ -55,7 +58,7 @@ p {
 .btn-secondary { background-color: #3a506b; color: white; }
 .btn-secondary:hover { background-color: #5c718e; }
 
-.hidden { display: none; }
+.hidden { display: none !important; }
 
 .kue-wadah { margin: 15px auto; width: 140px; }
 .kue-svg { width: 100%; height: auto; }
@@ -89,4 +92,11 @@ p {
     border: 2px dashed #4ea8de;
     background-color: #151d33;
     padding: 20px;
-    border-radius: 15px
+    border-radius: 15px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+#tampilan-ucapan-desain {
+    color: #56cfe1;
+}
