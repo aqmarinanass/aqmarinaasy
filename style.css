@@ -79,6 +79,7 @@ p {
 
 .hidden { display: none !important; }
 
+/* KUE & PALET */
 .kue-wadah { margin: 15px auto; width: 140px; }
 .kue-svg { width: 100%; height: auto; }
 .palet-warna { display: flex; justify-content: center; gap: 10px; margin: 15px 0; }
@@ -93,6 +94,7 @@ p {
 }
 .kotak-warna:hover { transform: scale(1.2); }
 
+/* INPUT & KOTAK SURAT */
 .input-ucapan {
     width: 90%;
     height: 80px;
@@ -115,6 +117,7 @@ p {
 }
 #tampilan-ucapan-desain { color: #56cfe1; }
 
+/* === NEON DINAMIS MENGIKUTI TEMA AKAN AKTIF DI SINI === */
 body.tema-lebaran .container {
     border-color: #7bed9f;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
