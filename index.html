@@ -26,16 +26,13 @@
             <button class="btn btn-secondary" onclick="kembaliKeAwal()">← Kembali</button>
         </div>
 
-      <div id="menu-utama" class="hidden">
-    <h1 id="judul-utama">Buat Ucapan</h1>
-    <p>Silakan pilih cara membuat ucapan:</p>
-    
-<div class="container">
-        
-        <button class="btn btn-tema" onclick="pilihMode('desain')">Ingin Membuat Desain</button>
-        <button class="btn btn-tema" onclick="pilihMode('instan')">Menggunakan Desain yang Tersedia</button>
-
-    </div>
+     <div id="menu-utama" class="hidden">
+            <h1 id="judul-utama">Buat Ucapan</h1>
+            <p>Silakan pilih cara membuat ucapan:</p>
+            <button class="btn btn-biasa" onclick="pilihMode('desain')">Ingin Membuat Desain</button>
+            <button class="btn btn-secondary" onclick="pilihMode('instan')">Menggunakan Desain yang Tersedia</button>
+            <button class="btn btn-secondary" style="margin-top: 15px;" onclick="kembaliKeTema()">← Ganti Tema Acara</button>
+        </div>
 
         <div id="area-desain" class="hidden">
             <h2>Tulis & Atur Suratmu</h2>
