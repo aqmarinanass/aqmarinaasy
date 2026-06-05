@@ -1,4 +1,4 @@
-   
+
 :root {
   --bg-utama: #12161f;
   --bg-container: #1a1f2c;
@@ -34,9 +34,6 @@ body.tema-ultah {
   --warna-teks: #e0b1cb;
 }
 
-/* ==========================================
-   2. LAYOUT UTAMA & FIX BUG MELAR
-   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
