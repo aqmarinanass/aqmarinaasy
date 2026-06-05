@@ -11,99 +11,38 @@ body {
 }
 
 .container {
-    border: 2px solid #4ea8de;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #4ea8de, 
-                0 0 40px rgba(78, 168, 222, 0.4), 
-                inset 0 0 15px rgba(78, 168, 222, 0.3);
-}
-
-.tema-lebaran .container {
-    border-color: #7bed9f;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #7bed9f, 
-                0 0 40px rgba(123, 237, 159, 0.4), 
-                inset 0 0 15px rgba(123, 237, 159, 0.3);
-}
-
-.tema-lebaran .container {
-    border-color: #7bed9f;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #7bed9f, 
-                0 0 40px rgba(123, 237, 159, 0.4), 
-                inset 0 0 15px rgba(123, 237, 159, 0.3);
-}
-.tema-lebaran h1, .tema-lebaran h2 {
-    color: #7bed9f;
-    text-shadow: 0 0 8px #7bed9f;
-}
-
-.tema-cinta .container {
-    border-color: #ffb6c1;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #ffb6c1, 
-                0 0 40px rgba(255, 182, 193, 0.4), 
-                inset 0 0 15px rgba(255, 182, 193, 0.3);
-}
-.tema-cinta h1, .tema-cinta h2 {
-    color: #ffb6c1;
-    text-shadow: 0 0 8px #ffb6c1;
-}
-
-.tema-ultah .container {
-    border-color: #ff7ff5;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #ff7ff5, 
-                0 0 40px rgba(255, 127, 245, 0.4), 
-                inset 0 0 15px rgba(255, 127, 245, 0.3);
-}
-.tema-ultah h1, .tema-ultah h2 {
-    color: #ff7ff5;
-    text-shadow: 0 0 8px #ff7ff5;
-}
-
-.tema-cinta .container {
-    border-color: #ffb6c1;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #ffb6c1, 
-                0 0 40px rgba(255, 182, 193, 0.4), 
-                inset 0 0 15px rgba(255, 182, 193, 0.3);
-}
-
-.tema-ultah .container {
-    border-color: #ff7ff5;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #ff7ff5, 
-                0 0 40px rgba(255, 127, 245, 0.4), 
-                inset 0 0 15px rgba(255, 127, 245, 0.3);
-}
-
-.container {
     background-color: #1c2541; 
     padding: 35px 30px;
     border-radius: 20px;
     text-align: center;
     max-width: 500px;
     width: 100%;
-    box-sizing: border-box; /* Mengunci ukuran biar tombol ga meluber keluar */
-    
+    box-sizing: border-box;
     border: 2px solid #4ea8de;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), /* Efek bayangan gelap di bawah biar kotak terasa terangkat */
-                0 0 20px #4ea8de,              /* Pendaran neon luar 1 */
-                0 0 40px rgba(78, 168, 222, 0.4), /* Pendaran neon luar 2 */
-                inset 0 0 15px rgba(78, 168, 222, 0.3); /* Pendaran neon lembut di dalam kotak */
-    
-    transition: transform 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                0 0 20px #4ea8de, 
+                0 0 40px rgba(78, 168, 222, 0.4), 
+                inset 0 0 15px rgba(78, 168, 222, 0.3);
+    transition: all 0.4s ease;
 }
 .container:hover {
-    transform: translateY(-5px); /* Kotak otomatis makin terangkat sedikit saat kursor mendekat */
+    transform: translateY(-5px);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 h1, h2 {
     color: #4ea8de; 
     margin-top: 0;
     margin-bottom: 10px;
-    text-shadow: 0 0 8px #4ea8de; /* Efek neon pada teks judul */
+    text-shadow: 0 0 8px #4ea8de;
+    transition: all 0.4s ease;
 }
 
 p {
@@ -118,10 +57,9 @@ p {
     font-size: 15px;
     border-radius: 10px;
     cursor: pointer;
-    margin: 8px 5px;
+    margin: 0; 
     transition: all 0.3s;
     font-weight: bold;
-    display: inline-block;
 }
 .btn:hover { 
     transform: scale(1.05); 
@@ -141,7 +79,6 @@ p {
 .kue-wadah { margin: 15px auto; width: 140px; }
 .kue-svg { width: 100%; height: auto; }
 .palet-warna { display: flex; justify-content: center; gap: 10px; margin: 15px 0; }
-
 .kotak-warna {
     width: 30px;
     height: 30px;
@@ -165,7 +102,6 @@ p {
     background-color: #0b132b;
     color: white;
 }
-
 .surat-box {
     border: 2px dashed #4ea8de;
     background-color: #151d33;
@@ -174,7 +110,37 @@ p {
     margin-top: 15px;
     text-align: left;
 }
+#tampilan-ucapan-desain { color: #56cfe1; }
 
-#tampilan-ucapan-desain {
-    color: #56cfe1;
+body.tema-lebaran .container {
+    border-color: #7bed9f;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                0 0 20px #7bed9f, 
+                0 0 40px rgba(123, 237, 159, 0.4), 
+                inset 0 0 15px rgba(123, 237, 159, 0.3);
+}
+body.tema-lebaran h1, body.tema-lebaran h2 {
+    color: #7bed9f; text-shadow: 0 0 8px #7bed9f;
+}
+
+body.tema-cinta .container {
+    border-color: #ffb6c1;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                0 0 20px #ffb6c1, 
+                0 0 40px rgba(255, 182, 193, 0.4), 
+                inset 0 0 15px rgba(255, 182, 193, 0.3);
+}
+body.tema-cinta h1, body.tema-cinta h2 {
+    color: #ffb6c1; text-shadow: 0 0 8px #ffb6c1;
+}
+
+body.tema-ultah .container {
+    border-color: #ff7ff5;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                0 0 20px #ff7ff5, 
+                0 0 40px rgba(255, 127, 245, 0.4), 
+                inset 0 0 15px rgba(255, 127, 245, 0.3);
+}
+body.tema-ultah h1, body.tema-ultah h2 {
+    color: #ff7ff5; text-shadow: 0 0 8px #ff7ff5;
 }
