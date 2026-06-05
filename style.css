@@ -1,48 +1,41 @@
-/* ==========================================
-   1. PENGATURAN UTAMA & VARIABEL TEMA
-   ========================================== */
+
 :root {
-  /* Default / Variabel Cadangan */
-  --bg-utama: #1a1a1a;
-  --bg-container: #22252a;
-  --warna-neon: #00ffff; /* Default biru cyan */
-  --warna-teks: #ffffff;
+  bg-utama: #1a1a1a;
+  bg-container: #22252a;
+  warna-neon: #00ffff; /* Default biru cyan */
+  warna-teks: #ffffff;
 }
 
-/* Tema Biasa / Kasual (Biru Cyan) */
 body.tema-biasa {
-  --bg-utama: #121824;
-  --bg-container: #1e293b;
-  --warna-neon: #38bdf8; 
-  --warna-teks: #f8fafc;
+  bg-utama: #121824;
+  bg-container: #1e293b;
+  warna-neon: #38bdf8; 
+  warna-teks: #f8fafc;
 }
 
-/* Tema Lebaran (Hijau) */
 body.tema-lebaran {
-  --bg-utama: #0f291e;
-  --bg-container: #173f2f;
-  --warna-neon: #2ecc71; 
-  --warna-teks: #f0fff4;
+  bg-utama: #0f291e;
+  bg-container: #173f2f;
+  warna-neon: #2ecc71; 
+  warna-teks: #f0fff4;
 }
 
-/* Tema Ungkapan Cinta (Pink / Merah Muda) */
 body.tema-cinta {
-  --bg-utama: #2d142c;
-  --bg-container: #510a32;
-  --warna-neon: #ff477e; 
-  --warna-teks: #fff0f5;
+  bg-utama: #2d142c;
+  bg-container: #510a32;
+  warna-neon: #ff477e; 
+  warna-teks: #fff0f5;
 }
 
-/* Tema Ulang Tahun (Ungu / Kuning Ceria) */
 body.tema-ultah {
-  --bg-utama: #231942;
-  --bg-container: #5e548e;
-  --warna-neon: #be95c4; 
-  --warna-teks: #e0b1cb;
+  bg-utama: #231942;
+  bg-container: #5e548e;
+  warna-neon: #be95c4; 
+  warna-teks: #e0b1cb;
 }
 
-/* Reset Dasar */
-* {
+
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -60,11 +53,8 @@ body {
   transition: background-color 0.4s ease;
 }
 
-/* ==========================================
-   2. CONTAINER UTAMA (EFEK NEON DINAMIS)
-   ========================================== */
 .container {
-  background-color: var(--bg-container);
+  background-color: var(bg-container);
   width: 100%;
   max-width: 480px;
   padding: 30px 25px;
@@ -72,8 +62,8 @@ body {
   text-align: center;
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
   
-  /* Di sini rahasianya: warna shadow otomatis mengikuti --warna-neon */
-  box-shadow: 0 0 25px var(--warna-neon);
+ 
+  box-shadow: 0 0 25px var(warna-neon);
 }
 
 h1, h2 {
@@ -87,14 +77,11 @@ p {
   opacity: 0.9;
 }
 
-/* Fungsi Utility untuk Menyembunyikan Menu */
+
 .hidden {
   display: none !important;
 }
 
-/* ==========================================
-   3. TOMBOL / BUTTONS
-   ========================================== */
 
 .btn {
   display: block;     
@@ -120,7 +107,6 @@ p {
   transform: translateY(0);
 }
 
-/* Variasi Warna Tombol */
 .btn-biasa {
   background-color: #38bdf8;
   color: #fff;
@@ -157,9 +143,6 @@ p {
   margin-bottom: 0;
 }
 
-/* ==========================================
-   4. AREA INPUT & BOX SURAT
-   ========================================== */
 .input-ucapan {
   width: 100%;
   height: 100px;
@@ -188,9 +171,6 @@ p {
   word-wrap: break-word;
 }
 
-/* ==========================================
-   5. FITUR KUE (UNTUK TEMA ULTAH)
-   ========================================== */
 .kue-wadah {
   display: flex;
   justify-content: center;
