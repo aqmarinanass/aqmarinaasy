@@ -118,13 +118,12 @@ function bagikanLink(mode) {
     const linkHasil = `${window.location.origin}${window.location.pathname}?tema=${temaAktif}&mode=${mode}&pesan=${pesanAman}`;
 
     navigator.clipboard.writeText(linkHasil).then(() => {
-        alert(" Sukses! Link surat ucapan berhasil disalin. Tinggal kamu kirimkan ke WhatsApp temanmu!");
+        alert("✨ Sukses! Link surat ucapan berhasil disalin. Tinggal kamu kirimkan ke WhatsApp temanmu!");
     }).catch(err => {
         alert("Gagal menyalin otomatis, silakan salin link ini: " + linkHasil);
     });
 }
 
-// Deteksi link kiriman orang lain
 window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const paramTema = urlParams.get('tema');
@@ -133,22 +132,35 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (paramTema && paramPesan) {
         document.getElementById('halaman-awal').classList.add('hidden');
+        
         document.body.className = '';
         document.body.classList.add('tema-' + paramTema);
         temaAktif = paramTema;
 
-        // Sembunyikan tombol share dan kembali saat membaca link kiriman orang
         if (paramMode === 'desain') {
             document.getElementById('area-desain').classList.remove('hidden');
-            if(document.getElementById('fitur-kue-desain')) document.getElementById('fitur-kue-desain').classList.add('hidden');
+            
             document.getElementById('teks-input-desain').classList.add('hidden');
+            if(document.getElementById('fitur-kue-desain')) {
+                document.getElementById('fitur-kue-desain').classList.add('hidden');
+            }
+
+            document.querySelector('#area-desain h2').innerText = "✉️ Ada Surat Untukmu ✨";
             document.getElementById('tampilan-ucapan-desain').innerText = decodeURIComponent(paramPesan);
+            
             const groupBtn = document.querySelector('#area-desain .button-group');
             if(groupBtn) groupBtn.classList.add('hidden');
+            
         } else {
             document.getElementById('area-instan').classList.remove('hidden');
-            if(document.getElementById('fitur-kue-instan')) document.getElementById('fitur-kue-instan').classList.add('hidden');
+            
             document.getElementById('teks-input-instan').classList.add('hidden');
+            if(document.getElementById('fitur-kue-instan')) {
+                document.getElementById('fitur-kue-instan').classList.add('hidden');
+            }
+            
+            document.querySelector('#area-instan h2').innerText = "✉️ Ada Surat Untukmu ✨";
+            document.querySelector('#area-instan p').classList.add('hidden'); 
             
             const hiasanAtas = document.getElementById('hiasan-atas-instan');
             const hiasanBawah = document.getElementById('hiasan-bawah-instan');
@@ -158,9 +170,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 hiasanAtas.innerText = "❤️ ✨ 🎀 ✨ ❤️"; hiasanBawah.innerText = "💖 Selalu Bersamamu 💖";
             } else if(paramTema === 'ultah') {
                 hiasanAtas.innerText = "🎈 ✨ 🎂 ✨ 🎈"; hiasanBawah.innerText = "🎉 Tiup Lilinnya! 🎉";
+            
+                if(document.getElementById('fitur-kue-instan')) document.getElementById('fitur-kue-instan').classList.remove('hidden');
             }
             
             document.getElementById('tampilan-ucapan-instan').innerText = decodeURIComponent(paramPesan);
+            
             const groupBtn = document.querySelector('#area-instan .button-group');
             if(groupBtn) groupBtn.classList.add('hidden');
         }
