@@ -1,7 +1,3 @@
-// ==========================================
-// 1. FUNGSI NAVIGASI HALAMAN (URUTAN PAS)
-// ==========================================
-
 function mulaiAplikasi() {
     const halAwal = document.getElementById('halaman-awal');
     const menuTema = document.getElementById('menu-tema');
@@ -33,10 +29,6 @@ function resetMenu() {
     if (menuUtama) menuUtama.classList.remove('hidden');
 }
 
-// ==========================================
-// 2. FUNGSI PENGATURAN TEMA (FIX: JALAN KE MENU UTAMA)
-// ==========================================
-
 function setTema(namaTema) {
     if (document.body) {
         document.body.className = 'tema-' + namaTema;
@@ -45,7 +37,6 @@ function setTema(namaTema) {
     const menuTema = document.getElementById('menu-tema');
     const menuUtama = document.getElementById('menu-utama');
     
-    // Sembunyikan menu tema, lalu tampilkan menu utama (pilihan mode buat)
     if (menuTema) menuTema.classList.add('hidden');
     if (menuUtama) menuUtama.classList.remove('hidden');
 
@@ -58,15 +49,11 @@ function setTema(namaTema) {
     }
 }
 
-// ==========================================
-// 3. FUNGSI MEMBUKA MODE (DESAIN / INSTAN)
-// ==========================================
 
 function pilihMode(mode) {
     const menuUtama = document.getElementById('menu-utama');
     if (menuUtama) menuUtama.classList.add('hidden');
     
-    // FIX: Typo biasas sudah dibuang menjadi biasa
     let temaAktif = 'biasa';
     if (document.body && document.body.classList) {
         if (document.body.classList.contains('tema-lebaran') || document.body.className.includes('tema-lebaran')) {
@@ -98,14 +85,14 @@ function pilihMode(mode) {
         
         if (hiasanAtas && hiasanBawah) {
             if (temaAktif === 'lebaran') {
-                hiasanAtas.innerText = "🌙 Selamat Hari Raya Idul Fitri 🌙";
-                hiasanBawah.innerText = "✨ Mohon Maaf Lahir & Batin ✨";
+                hiasanAtas.innerText = "🌙 Selamat Hari Raya 🌙";
+                hiasanBawah.innerText = "Mohon Maaf Lahir & Batin";
             } else if (temaAktif === 'cinta') {
-                hiasanAtas.innerText = "💖 Special For You 💖";
-                hiasanBawah.innerText = "🌹 I Love You So Much 🌹";
+                hiasanAtas.innerText = "💖 ------------💖";
+                hiasanBawah.innerText = " have a nice dayy! ";
             } else if (temaAktif === 'ultah') {
-                hiasanAtas.innerText = "🎉 Happy Birthday! 🎉";
-                hiasanBawah.innerText = "🎂 Wish You All The Best 🎂";
+                hiasanAtas.innerText = "Happy Birthday! ";
+                hiasanBawah.innerText = "Wish You All The Best!!";
             } else {
                 hiasanAtas.innerText = "✉️ --- Surat Ucapan --- ✉️";
                 hiasanBawah.innerText = "✉️ --------------------- ✉️";
@@ -119,10 +106,6 @@ function pilihMode(mode) {
         }
     }
 }
-
-// ==========================================
-// 4. FUNGSI KUE & LIVE PREVIEW TEKS
-// ==========================================
 
 function pilihWarnaKue(warna) {
     const kueBadanDesain = document.getElementById('kue-badan-desain');
@@ -148,9 +131,6 @@ function updateUcapan(mode) {
     }
 }
 
-// ==========================================
-// 5. FUNGSI GENERATE LINK / BAGIKAN SURAT
-// ==========================================
 
 function bagikanLink(mode) {
     let temaAktif = 'biasa';
@@ -184,10 +164,6 @@ function bagikanLink(mode) {
         alert('Gagal menyalin otomatis. Ini link kamu:\n\n' + linkHasil);
     });
 }
-
-// ==========================================
-// 6. SISTEM DETEKSI OTOMATIS PENERIMA LINK
-// ==========================================
 
 window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -256,14 +232,14 @@ window.addEventListener('DOMContentLoaded', () => {
             const hiasanBawah = document.getElementById('hiasan-bawah-instan');
             if (hiasanAtas && hiasanBawah) {
                 if (paramTema === 'lebaran') {
-                    hiasanAtas.innerText = "🌙 Selamat Hari Raya Idul Fitri 🌙";
-                    hiasanBawah.innerText = "✨ Mohon Maaf Lahir & Batin ✨";
+                    hiasanAtas.innerText = "🌙 Selamat Hari Raya 🌙";
+                    hiasanBawah.innerText = "Mohon Maaf Lahir & Batin";
                 } else if (paramTema === 'cinta') {
-                    hiasanAtas.innerText = "💖 Special For You 💖";
-                    hiasanBawah.innerText = "🌹 I Love You So Much 🌹";
+                    hiasanAtas.innerText = "💖 ------------ 💖";
+                    hiasanBawah.innerText = "have a nice day!";
                 } else if (paramTema === 'ultah') {
-                    hiasanAtas.innerText = "🎉 Happy Birthday! 🎉";
-                    hiasanBawah.innerText = "🎂 Wish You All The Best 🎂";
+                    hiasanAtas.innerText = " Happy Birthday! ";
+                    hiasanBawah.innerText = " Wish You All The Best ";
                     const fKueI = document.getElementById('fitur-kue-instan');
                     if (fKueI) fKueI.classList.remove('hidden');
                 }
