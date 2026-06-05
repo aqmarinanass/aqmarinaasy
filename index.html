@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat Ucapan </title>
+    <title>Surat Ucapan</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="tema-biasa"> <div class="container">
-    <div id="halaman-awal">
-            <h1>Halo! </h1>
-            <p style="font-size: 18px; margin-bottom: 25px;">Apakah kamu ingin mengirim surat?</p>
-            <button class="btn btn-biasa" onclick="mulaiAplikasi()">Ya, Ingin Mengirim Surat </button>
-        </div>
+<body class="tema-biasa"> 
+    
+    <div class="container">
         
+        <div id="halaman-awal">
+            <h1>Halo! </h1>
+            <p style="font-size: 18px;">Apakah kamu ingin mengirim surat?</p>
+            <button class="btn btn-biasa" onclick="mulaiAplikasi()">Ya, Ingin Mengirim Surat ✉️</button>
+        </div>
+
         <div id="menu-tema" class="hidden">
             <h1>Pilih Tema Surat</h1>
             <p>Pilih suasana ucapan yang ingin kamu buat:</p>
-            <button class="btn btn-lebaran" onclick="setTema('lebaran')"> lebaran </button>
+            <button class="btn btn-lebaran" onclick="setTema('lebaran')">Lebaran </button>
             <button class="btn btn-cinta" onclick="setTema('cinta')">Ungkapan Cinta </button>
             <button class="btn btn-ultah" onclick="setTema('ultah')">Ulang Tahun </button>
             <button class="btn btn-biasa" onclick="setTema('biasa')">Biasa / Kasual </button>
+            <br><br>
+            <button class="btn btn-secondary" onclick="kembaliKeAwal()">← Kembali</button>
         </div>
 
         <div id="menu-utama" class="hidden">
-            <h1 id="judul-utama">Buat Ucapan </h1>
+            <h1 id="judul-utama">Buat Ucapan</h1>
             <p>Silakan pilih cara membuat ucapan:</p>
-            <button class="btn" onclick="pilihMode('desain')">ingin membuat desain</button>
-            <button class="btn btn-secondary" onclick="pilihMode('instan')">menggunakan desain yang tersedia</button>
+            <button class="btn" onclick="pilihMode('desain')">Ingin Membuat Desain</button>
+            <button class="btn btn-secondary" onclick="pilihMode('instan')">Menggunakan Desain yang Tersedia</button>
             <br><br>
-            <button class="btn btn-secondary" onclick="kembaliKeTema()">Ganti Tema Acara</button>
+            <button class="btn btn-secondary" onclick="kembaliKeTema()">← Ganti Tema ucapan</button>
         </div>
 
         <div id="area-desain" class="hidden">
-            <h2>Desain Kue & Suratmu </h2>
+            <h2>Desain Kue & Suratmu</h2>
             <div class="kue-wadah">
                 <svg class="kue-svg" viewBox="0 0 100 100">
                     <rect x="47" y="10" width="6" height="15" fill="#ffa500"/>
@@ -59,7 +64,7 @@
             </div>
             
             <br>
-            <button class="btn btn-secondary" onclick="resetMenu()">Kembali</button>
+            <button class="btn btn-secondary" onclick="resetMenu()">← Kembali</button>
         </div>
 
         <div id="area-instan" class="hidden">
@@ -85,7 +90,7 @@
             </div>
             
             <br>
-            <button class="btn btn-secondary" onclick="resetMenu()">Kembali</button>
+            <button class="btn btn-secondary" onclick="resetMenu()">← Kembali</button>
         </div>
 
     </div>
