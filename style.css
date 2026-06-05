@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff; 
@@ -10,6 +11,7 @@ body {
     background-color: #0b132b; 
 }
 
+/* === BASE CONTAINER (KASUAL / DEFAULT BIRU MUDA) === */
 .container {
     background-color: #1c2541; 
     padding: 35px 30px;
@@ -29,21 +31,13 @@ body {
     transform: translateY(-5px);
 }
 
-#menu-tema {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-
+/* === TOMBOL BERDAMPINGAN === */
 .button-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     margin-top: 20px;
-    width: 100%;
 }
 
 h1, h2 {
@@ -59,7 +53,6 @@ p {
     margin-bottom: 20px;
 }
 
-
 .btn {
     color: #0b132b;
     border: none;
@@ -67,20 +60,10 @@ p {
     font-size: 15px;
     border-radius: 10px;
     cursor: pointer;
-    margin: 0; 
+    margin: 0; /* Dimatikan margin-nya agar diatur oleh gap flexbox */
     transition: all 0.3s;
     font-weight: bold;
-    width: 85%; 
-    max-width: 280px;
-    box-sizing: border-box;
 }
-
-
-.button-group .btn {
-    width: auto;
-    max-width: none;
-}
-
 .btn:hover { 
     transform: scale(1.05); 
     filter: brightness(1.2);
@@ -95,7 +78,6 @@ p {
 .btn-secondary:hover { background-color: #5c718e; }
 
 .hidden { display: none !important; }
-
 
 .kue-wadah { margin: 15px auto; width: 140px; }
 .kue-svg { width: 100%; height: auto; }
@@ -112,7 +94,7 @@ p {
 .kotak-warna:hover { transform: scale(1.2); }
 
 .input-ucapan {
-    width: 100%; 
+    width: 90%;
     height: 80px;
     padding: 10px;
     border: 1px solid #3a506b;
@@ -122,7 +104,6 @@ p {
     margin-top: 10px;
     background-color: #0b132b;
     color: white;
-    box-sizing: border-box;
 }
 .surat-box {
     border: 2px dashed #4ea8de;
@@ -133,7 +114,6 @@ p {
     text-align: left;
 }
 #tampilan-ucapan-desain { color: #56cfe1; }
-
 
 body.tema-lebaran .container {
     border-color: #7bed9f;
