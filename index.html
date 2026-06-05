@@ -144,19 +144,19 @@
             <button class="btn btn-secondary" onclick="resetMenu()">Kembali</button>
         </div>
     </div>
-
-   {
+    
+<script>
+        function pilihMode(mode) {
             document.getElementById('menu-utama').classList.add('hidden');
             
             if (mode === 'desain') {
                 document.getElementById('area-desain').classList.remove('hidden');
-            } 
-            else if (mode === 'instan') {
+            } else if (mode === 'instan') {
                 document.getElementById('area-instan').classList.remove('hidden');
             }
         }
 
-      {
+        function resetMenu() {
             document.getElementById('area-desain').classList.add('hidden');
             document.getElementById('area-instan').classList.add('hidden');
             document.getElementById('menu-utama').classList.remove('hidden');
@@ -167,7 +167,7 @@
 
         function gantiWarnaKue() {
             indeksWarna = (indeksWarna + 1) % daftarWarna.length;
-          document.getElementById('kue-badan').style.fill = daftarWarna[indeksWarna];
+            document.getElementById('kue-badan').style.fill = daftarWarna[indeksWarna];
         }
     </script>
 </body>
