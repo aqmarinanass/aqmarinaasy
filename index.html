@@ -19,10 +19,10 @@
         <div id="menu-tema" class="hidden">
             <h1>Pilih Tema Surat</h1>
             <p>Pilih suasana ucapan yang ingin kamu buat:</p>
-            <button class="btn btn-lebaran" onclick="setTema('lebaran')">Lebaran</button>
-            <button class="btn btn-cinta" onclick="setTema('cinta')">Ungkapan Cinta</button>
-            <button class="btn btn-ultah" onclick="setTema('ultah')">Ulang Tahun</button>
-            <button class="btn btn-biasa" onclick="setTema('biasa')">Biasa / Kasual</button>
+            <button class="btn btn-lebaran" onclick="setTema('lebaran')">Lebaran </button>
+            <button class="btn btn-cinta" onclick="setTema('cinta')">Ungkapan Cinta </button>
+            <button class="btn btn-ultah" onclick="setTema('ultah')">Ulang Tahun </button>
+            <button class="btn btn-biasa" onclick="setTema('biasa')">Biasa / Kasual </button>
             <br><br>
             <button class="btn btn-secondary" onclick="kembaliKeAwal()">← Kembali</button>
         </div>
@@ -37,11 +37,6 @@
         </div>
 
         <div id="area-desain" class="hidden">
-            <br>
-<button class="btn btn-biasa" onclick="bagikanLink('desain')">🔗 Kirim / Salin Link Ucapan</button>
-
-<br>
-<button class="btn btn-biasa" onclick="bagikanLink('instan')">🔗 Kirim / Salin Link Ucapan</button>
             <h2>Tulis & Atur Suratmu</h2>
             
             <div id="fitur-kue-desain">
@@ -67,25 +62,17 @@
             <textarea class="input-ucapan" id="teks-input-desain" placeholder="Ketik ucapan kustom kamu..." oninput="updateUcapan('desain')"></textarea>
 
             <div class="surat-box">
-                <br>
-<button class="btn btn-biasa" onclick="bagikanLink('desain')">🔗 Kirim / Salin Link Ucapan</button>
-
-<br>
-<button class="btn btn-biasa" onclick="bagikanLink('instan')">🔗 Kirim / Salin Link Ucapan</button>
                 <p id="tampilan-ucapan-desain" style="white-space: pre-wrap; font-weight: bold;">[ Ucapanmu akan muncul di sini ]</p>
             </div>
             
-            <br>
-            <button class="btn btn-secondary" onclick="resetMenu()">← Kembali</button>
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="resetMenu()">← Kembali</button>
+                <button class="btn btn-biasa" id="btn-share-desain" onclick="bagikanLink('desain')">🔗 Kirim via Link</button>
+            </div>
         </div>
 
         <div id="area-instan" class="hidden">
-            <br>
-<button class="btn btn-biasa" onclick="bagikanLink('desain')">🔗 Kirim / Salin Link Ucapan</button>
-
-<br>
-<button class="btn btn-biasa" onclick="bagikanLink('instan')">🔗 Kirim / Salin Link Ucapan</button>
-            <h2>Surat Ucapan Instan</h2>
+            <h2>Surat Ucapan Instan </h2>
             <p>(Hiasan otomatis rapi sesuai tema, tinggal ketik ucapan pengirim!)</p>
             
             <div id="fitur-kue-instan" class="kue-wadah">
@@ -101,13 +88,15 @@
             <textarea class="input-ucapan" id="teks-input-instan" placeholder="Ketik ucapan dari kamu..." oninput="updateUcapan('instan')"></textarea>
 
             <div class="surat-box">
-                <div id="hiasan-atas-instan" style="text-align: center; margin-bottom: 10px; font-size: 20px;">✉️ ✨ ✉️</div>
+                <div id="hiasan-atas-instan" style="text-align: center; margin-bottom: 10px; font-size: 20px;">✉️---------------✉️</div>
                 <p id="tampilan-ucapan-instan" style="white-space: pre-wrap; text-align: center;">[ Ucapan kustom pengirim akan muncul di sini ]</p>
-                <div id="hiasan-bawah-instan" style="text-align: center; margin-top: 10px; font-size: 20px;">✉️ ✨ ✉️</div>
+                <div id="hiasan-bawah-instan" style="text-align: center; margin-top: 10px; font-size: 20px;">✉️-----------------✉️</div>
             </div>
             
-            <br>
-            <button class="btn btn-secondary" onclick="resetMenu()">← Kembali</button>
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="resetMenu()">← Kembali</button>
+                <button class="btn btn-biasa" id="btn-share-instan" onclick="bagikanLink('instan')">🔗 Kirim via Link</button>
+            </div>
         </div>
 
     </div>
