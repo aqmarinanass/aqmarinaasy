@@ -10,6 +10,7 @@ body {
     background-color: #0b132b; 
 }
 
+
 .container {
     background-color: #1c2541; 
     padding: 35px 30px;
@@ -29,12 +30,20 @@ body {
     transform: translateY(-5px);
 }
 
+#menu-tema {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Memberikan jarak antar tombol biar tidak nempel */
+}
+
 .button-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     margin-top: 20px;
+    width: 100%;
 }
 
 h1, h2 {
@@ -60,7 +69,16 @@ p {
     margin: 0; 
     transition: all 0.3s;
     font-weight: bold;
+    width: 85%; /* Menyeragamkan lebar tombol menu utama */
+    max-width: 280px;
+    box-sizing: border-box;
 }
+
+.button-group .btn {
+    width: auto;
+    max-width: none;
+}
+
 .btn:hover { 
     transform: scale(1.05); 
     filter: brightness(1.2);
@@ -75,6 +93,7 @@ p {
 .btn-secondary:hover { background-color: #5c718e; }
 
 .hidden { display: none !important; }
+
 
 .kue-wadah { margin: 15px auto; width: 140px; }
 .kue-svg { width: 100%; height: auto; }
@@ -91,8 +110,7 @@ p {
 .kotak-warna:hover { transform: scale(1.2); }
 
 .input-ucapan {
-    width: 90%;
-    height: 80px;
+    width: 100%;
     padding: 10px;
     border: 1px solid #3a506b;
     border-radius: 10px;
@@ -101,6 +119,7 @@ p {
     margin-top: 10px;
     background-color: #0b132b;
     color: white;
+    box-sizing: border-box;
 }
 .surat-box {
     border: 2px dashed #4ea8de;
