@@ -2,12 +2,13 @@ function mulaiAplikasi() {
     document.getElementById('halaman-awal').classList.add('hidden');
     document.getElementById('menu-tema').classList.remove('hidden');
 }
-let temaAktif = 'biasa';
+
+function kembaliKeAwal() {
+    document.getElementById('menu-tema').classList.add('hidden');
+    document.getElementById('halaman-awal').classList.remove('hidden');
+}
 
 function setTema(namaTema) {
-    temaAktif = namaTema;
-    
-  
     document.body.className = '';
     document.body.classList.add('tema-' + namaTema);
     
@@ -18,42 +19,35 @@ function setTema(namaTema) {
     const inputDesain = document.getElementById('teks-input-desain');
     const inputInstan = document.getElementById('teks-input-instan');
 
-    
     if (namaTema === 'lebaran') {
-        judulUtama.innerText = "Tema: lebaran";
-        hiasanAtas.innerText = "🌙 ✨ 🕌 ✨ 🌙";
-        hiasanBawah.innerText = "✨ Ketupat & Berkah ✨";
-        kueInstan.style.fill = "#7bed9f"; 
-        inputDesain.placeholder = "Ketik ucapan Mohon Maaf Lahir & Batin kamu di sini...";
-        inputInstan.placeholder = "Ketik ucapan Mohon Maaf Lahir & Batin kamu di sini...";
+        if(judulUtama) judulUtama.innerText = "Tema: Idul Fitri 🌙";
+        if(hiasanAtas) hiasanAtas.innerText = "🌙 ✨ 🕌 ✨ 🌙";
+        if(hiasanBawah) hiasanBawah.innerText = "✨ Ketupat & Berkah ✨";
+        if(kueInstan) kueInstan.style.fill = "#7bed9f";
     } else if (namaTema === 'cinta') {
-        judulUtama.innerText = "Tema: Ungkapan Cinta ";
-        hiasanAtas.innerText = "❤️ ✨ 🎀 ✨ ❤️";
-        hiasanBawah.innerText = "💖 Selalu Bersamamu 💖";
-        kueInstan.style.fill = "#ffb6c1";
-        inputDesain.placeholder = "Ketik ungkapan sayang atau cintamu di sini...";
-        inputInstan.placeholder = "Ketik ungkapan sayang atau cintamu di sini...";
+        if(judulUtama) judulUtama.innerText = "Tema: Ungkapan Cinta ❤️";
+        if(hiasanAtas) hiasanAtas.innerText = "❤️ ✨ 🎀 ✨ ❤️";
+        if(hiasanBawah) hiasanBawah.innerText = "💖 Selalu Bersamamu 💖";
+        if(kueInstan) kueInstan.style.fill = "#ffb6c1";
     } else if (namaTema === 'ultah') {
-        judulUtama.innerText = "Tema: Ulang Tahun ";
-        hiasanAtas.innerText = "🎈 ✨ 🎂 ✨ 🎈";
-        hiasanBawah.innerText = "🎉 Tiup Lilinnya! 🎉";
-        kueInstan.style.fill = "#ff7ff5"; 
-        inputDesain.placeholder = "Ketik doa selamat ulang tahun di sini...";
-        inputInstan.placeholder = "Ketik doa selamat ulang tahun di sini...";
+        if(judulUtama) judulUtama.innerText = "Tema: Ulang Tahun 🎂";
+        if(hiasanAtas) hiasanAtas.innerText = "🎈 ✨ 🎂 ✨ 🎈";
+        if(hiasanBawah) hiasanBawah.innerText = "🎉 Tiup Lilinnya! 🎉";
+        if(kueInstan) kueInstan.style.fill = "#ff7ff5";
     } else {
-        // Tema Biasa / Kasual
-        judulUtama.innerText = "Tema: Kasual ";
-        hiasanAtas.innerText = "✉️ ✨ ⭐ ✨ ✉️";
-        hiasanBawah.innerText = "✨ Salam Hangat ✨";
-        kueInstan.style.fill = "#4ea8de"; 
-        inputDesain.placeholder = "Ketik ucapan kasual/biasa di sini...";
-        inputInstan.placeholder = "Ketik ucapan kasual/biasa di sini...";
+        if(judulUtama) judulUtama.innerText = "Tema: Kasual ✉️";
+        if(hiasanAtas) hiasanAtas.innerText = "✉️ ✨ ⭐ ✨ ✉️";
+        if(hiasanBawah) hiasanBawah.innerText = "✨ Salam Hangat ✨";
+        if(kueInstan) kueInstan.style.fill = "#4ea8de";
     }
 
-    inputDesain.value = '';
-    inputInstan.value = '';
-    document.getElementById('tampilan-ucapan-desain').innerText = "[ Ucapanmu akan muncul di sini ]";
-    document.getElementById('tampilan-ucapan-instan').innerText = "[ Ucapan kustom pengirim akan muncul di sini ]";
+    if(inputDesain) inputDesain.value = '';
+    if(inputInstan) inputInstan.value = '';
+    
+    const tampDesain = document.getElementById('tampilan-ucapan-desain');
+    const tampInstan = document.getElementById('tampilan-ucapan-instan');
+    if(tampDesain) tampDesain.innerText = "[ Ucapanmu akan muncul di sini ]";
+    if(tampInstan) tampInstan.innerText = "[ Ucapan kustom pengirim akan muncul di sini ]";
 
     document.getElementById('menu-tema').classList.add('hidden');
     document.getElementById('menu-utama').classList.remove('hidden');
@@ -80,7 +74,8 @@ function resetMenu() {
 }
 
 function pilihWarnaKue(warna) {
-    document.getElementById('kue-badan-desain').style.fill = warna;
+    const kueBadan = document.getElementById('kue-badan-desain');
+    if(kueBadan) kueBadan.style.fill = warna;
 }
 
 function updateUcapan(mode) {
