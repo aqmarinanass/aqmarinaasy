@@ -87,24 +87,25 @@ p {
 /* ==========================================
    3. TOMBOL (PASTI VERTIKAL & LEBAR PENUH)
    ========================================== */
-.btn, button {
+/* 3. TOMBOL (PASTI VERTIKAL & LEBAR PENUH) */
+.btn {
   display: block !important;      
   width: 100% !important;       
   padding: 12px !important;           
   margin: 0 auto 12px auto !important;   
   max-width: 320px !important;         
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
   color: #ffffff !important; 
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px) !important;
 }
 
-.btn:hover, button:hover {
+.btn:hover {
   transform: translateY(-1px);
   filter: brightness(1.2);
 }
