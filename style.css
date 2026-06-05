@@ -1,15 +1,13 @@
 /* ==========================================
-   1. PENGATURAN UTAMA & VARIABEL TEMA
+   1. PENYIMPANAN VARIABEL WARNA YANG BENAR
    ========================================== */
 :root {
-  /* Default / Variabel Cadangan */
   --bg-utama: #1a1a1a;
   --bg-container: #22252a;
-  --warna-neon: #00ffff; /* Default biru cyan */
+  --warna-neon: #00ffff;
   --warna-teks: #ffffff;
 }
 
-/* Tema Biasa / Kasual (Biru Cyan) */
 body.tema-biasa {
   --bg-utama: #121824;
   --bg-container: #1e293b;
@@ -17,7 +15,6 @@ body.tema-biasa {
   --warna-teks: #f8fafc;
 }
 
-/* Tema Lebaran (Hijau) */
 body.tema-lebaran {
   --bg-utama: #0f291e;
   --bg-container: #173f2f;
@@ -25,7 +22,6 @@ body.tema-lebaran {
   --warna-teks: #f0fff4;
 }
 
-/* Tema Ungkapan Cinta (Pink / Merah Muda) */
 body.tema-cinta {
   --bg-utama: #2d142c;
   --bg-container: #510a32;
@@ -33,7 +29,6 @@ body.tema-cinta {
   --warna-teks: #fff0f5;
 }
 
-/* Tema Ulang Tahun (Ungu / Kuning Ceria) */
 body.tema-ultah {
   --bg-utama: #231942;
   --bg-container: #5e548e;
@@ -41,12 +36,19 @@ body.tema-ultah {
   --warna-teks: #e0b1cb;
 }
 
-/* Reset Dasar */
+/* ==========================================
+   2. LAYOUT UTAMA & SAKLAR SEMBUNYI
+   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Saklar utama pembasmi tampilan menumpuk */
+.hidden {
+  display: none !important;
 }
 
 body {
@@ -60,9 +62,6 @@ body {
   transition: background-color 0.4s ease;
 }
 
-/* ==========================================
-   2. CONTAINER UTAMA (EFEK NEON DINAMIS)
-   ========================================== */
 .container {
   background-color: var(--bg-container);
   width: 100%;
@@ -85,64 +84,67 @@ p {
   opacity: 0.9;
 }
 
-/* Fungsi Utility untuk Menyembunyikan Menu */
-.hidden {
-  display: none !important;
-}
-
 /* ==========================================
-   3. TOMBOL / BUTTONS
+   3. DESAIN TOMBOL TRANSPARAN KACA
    ========================================== */
 .btn {
   display: block;     
   width: 100%;       
   padding: 14px;
   margin-bottom: 12px;
-  border: none;
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  background-color: #f8fafc;
-  color: #1e293b;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important; /* Teks dikunci putih semua agar estetik */
+  backdrop-filter: blur(5px);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn:active {
   transform: translateY(0);
 }
 
-/* Variasi Warna Tombol */
 .btn-biasa {
-  background-color: #38bdf8;
-  color: #fff;
+  background-color: rgba(56, 189, 248, 0.25);
+  border-color: rgba(56, 189, 248, 0.4);
 }
+.btn-biasa:hover { background-color: rgba(56, 189, 248, 0.4); }
 
 .btn-lebaran {
-  background-color: #2ecc71;
-  color: #fff;
+  background-color: rgba(46, 204, 113, 0.25);
+  border-color: rgba(46, 204, 113, 0.4);
 }
+.btn-lebaran:hover { background-color: rgba(46, 204, 113, 0.4); }
 
 .btn-cinta {
-  background-color: #ff477e;
-  color: #fff;
+  background-color: rgba(255, 71, 126, 0.25);
+  border-color: rgba(255, 71, 126, 0.4);
 }
+.btn-cinta:hover { background-color: rgba(255, 71, 126, 0.4); }
 
 .btn-ultah {
-  background-color: #be95c4;
-  color: #fff;
+  background-color: rgba(190, 149, 196, 0.25);
+  border-color: rgba(190, 149, 196, 0.4);
 }
+.btn-ultah:hover { background-color: rgba(190, 149, 196, 0.4); }
 
 .btn-secondary {
-  background-color: #475569;
-  color: #fff;
+  background-color: rgba(71, 85, 105, 0.3);
+  border-color: rgba(71, 85, 105, 0.4);
 }
+.btn-secondary:hover { background-color: rgba(71, 85, 105, 0.5); }
 
+/* ==========================================
+   4. INPUT & KOTAK SURAT
+   ========================================== */
 .button-group {
   display: flex;
   gap: 10px;
@@ -154,9 +156,6 @@ p {
   margin-bottom: 0;
 }
 
-/* ==========================================
-   4. AREA INPUT & BOX SURAT
-   ========================================== */
 .input-ucapan {
   width: 100%;
   height: 100px;
@@ -176,8 +175,8 @@ p {
 }
 
 .surat-box {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px dashed rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1.5px dashed rgba(255, 255, 255, 0.3);
   padding: 20px;
   border-radius: 8px;
   margin-top: 10px;
@@ -185,9 +184,6 @@ p {
   word-wrap: break-word;
 }
 
-/* ==========================================
-   5. FITUR KUE (UNTUK TEMA ULTAH)
-   ========================================== */
 .kue-wadah {
   display: flex;
   justify-content: center;
