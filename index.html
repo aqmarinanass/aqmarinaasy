@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="tema-biasa"> <div class="container">
+    <div id="halaman-awal">
+            <h1>Halo! </h1>
+            <p style="font-size: 18px; margin-bottom: 25px;">Apakah kamu ingin mengirim surat?</p>
+            <button class="btn btn-biasa" onclick="mulaiAplikasi()">Ya, Ingin Mengirim Surat </button>
+        </div>
         
-        <div id="menu-tema">
+        <div id="menu-tema" class="hidden">
             <h1>Pilih Tema Surat</h1>
             <p>Pilih suasana ucapan yang ingin kamu buat:</p>
             <button class="btn btn-lebaran" onclick="setTema('lebaran')"> lebaran </button>
