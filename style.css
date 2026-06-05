@@ -20,17 +20,45 @@ body.tema-lebaran { background: linear-gradient(135deg, #134e5e, #71965a); }
 body.tema-cinta { background: linear-gradient(135deg, #d3cbb8, #c850c0); }
 body.tema-ultah { background: linear-gradient(135deg, #4e54c8, #8f94fb); }
 
+
+   
 .container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(10, 10, 25, 0.6); 
+    backdrop-filter: blur(12px);
+    
+    border: 2px solid #00f2fe; 
+    
     padding: 30px;
     border-radius: 20px;
     width: 100%;
     max-width: 450px;
     text-align: center;
     color: #ffffff;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    box-shadow: 
+        0 0 10px #00f2fe,
+        0 0 20px #00f2fe,
+        0 0 40px #00f2fe,
+        inset 0 0 15px rgba(0, 242, 254, 0.5);
+        
+    animation: neonGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 
+            0 0 8px #00f2fe,
+            0 0 15px #00f2fe,
+            0 0 30px #00f2fe,
+            inset 0 0 10px rgba(0, 242, 254, 0.4);
+    }
+    100% {
+        box-shadow: 
+            0 0 15px #00f2fe,
+            0 0 30px #00f2fe,
+            0 0 50px #00f2fe,
+            inset 0 0 20px rgba(0, 242, 254, 0.7);
+    }
 }
 
 h1, h2 {
