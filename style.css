@@ -2,7 +2,7 @@
 :root {
   bg-utama: #1a1a1a;
   bg-container: #22252a;
-  warna-neon: #00ffff; /* Default biru cyan */
+  warna-neon: #00ffff;
   warna-teks: #ffffff;
 }
 
@@ -43,8 +43,8 @@ body.tema-ultah {
 }
 
 body {
-  background-color: var(--bg-utama);
-  color: var(--warna-teks);
+  background-color: var(bg-utama);
+  color: var(warna-teks);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -158,7 +158,7 @@ p {
 }
 
 .input-ucapan:focus {
-  border-color: var(--warna-neon);
+  border-color: var(warna-neon);
 }
 
 .surat-box {
