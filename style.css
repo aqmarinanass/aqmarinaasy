@@ -1,43 +1,43 @@
 /* ==========================================
-   1. PENYIMPANAN VARIABEL WARNA
+   1. VARIABEL WARNA (LEBIH PEKAT & JRENG)
    ========================================== */
 :root {
-  --bg-utama: #1a1a1a;
-  --bg-container: #22252a;
+  --bg-utama: #12161f;
+  --bg-container: #1a1f2c;
   --warna-neon: #00ffff;
   --warna-teks: #ffffff;
 }
 
 body.tema-biasa {
-  --bg-utama: #121824;
-  --bg-container: #1e293b;
+  --bg-utama: #0f141c;
+  --bg-container: #151b26;
   --warna-neon: #38bdf8; 
   --warna-teks: #f8fafc;
 }
 
 body.tema-lebaran {
-  --bg-utama: #0f291e;
-  --bg-container: #173f2f;
+  --bg-utama: #0a1c14;
+  --bg-container: #102a1e;
   --warna-neon: #2ecc71; 
   --warna-teks: #f0fff4;
 }
 
 body.tema-cinta {
-  --bg-utama: #2d142c;
-  --bg-container: #510a32;
+  --bg-utama: #1f0b1e;
+  --bg-container: #360621;
   --warna-neon: #ff477e; 
   --warna-teks: #fff0f5;
 }
 
 body.tema-ultah {
-  --bg-utama: #231942;
-  --bg-container: #5e548e;
+  --bg-utama: #160f29;
+  --bg-container: #2b1c4e;
   --warna-neon: #be95c4; 
   --warna-teks: #e0b1cb;
 }
 
 /* ==========================================
-   2. LAYOUT UTAMA & SAKLAR
+   2. LAYOUT UTAMA & FIX BUG MELAR
    ========================================== */
 * {
   box-sizing: border-box;
@@ -46,6 +46,7 @@ body.tema-ultah {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Saklar pembasmi menu menumpuk */
 .hidden {
   display: none !important;
 }
@@ -57,95 +58,93 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  transition: background-color 0.4s ease;
+  padding: 15px;
+  transition: all 0.4s ease;
 }
 
-/* Biar kotak utama gak ikutan melar selebar layar laptop */
+/* Ukuran kotak dikunci 380px biar langsing di laptop & HP */
 .container {
   background-color: var(--bg-container);
   width: 100%;
-  max-width: 420px; /* Ukuran kotak dikunci biar pas dan estetik */
-  padding: 30px 25px;
+  max-width: 380px; 
+  padding: 25px 20px;
   border-radius: 16px;
   text-align: center;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 0 25px var(--warna-neon);
+  box-shadow: 0 0 20px var(--warna-neon);
+  transition: all 0.4s ease;
 }
 
 h1, h2 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  font-size: 22px;
   font-weight: 700;
 }
 
 p {
-  margin-bottom: 25px;
-  font-size: 15px;
-  opacity: 0.9;
+  margin-bottom: 18px;
+  font-size: 14px;
+  opacity: 0.85;
 }
 
 /* ==========================================
-   3. DESAIN TOMBOL (WARNA LEBIH PEKAT & JELAS)
+   3. TOMBOL RAPAT & WARNA SOLID TEBAL
    ========================================== */
 .btn {
   display: block;     
   width: 100%;       
-  padding: 14px;
-  margin: 0 auto 14px auto; /* Jarak antar tombol diatur seimbang */
-  max-width: 340px;         /* Batas lebar tombol di dalam kotak */
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  font-size: 16px;
+  padding: 12px;
+  /* Jarak vertikal dipersempit biar kotak atas-bawah gak jauhan */
+  margin: 0 auto 6px auto; 
+  max-width: 320px;         
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   color: #ffffff !important; 
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); /* Biar tulisan tombol makin kebaca */
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.15);
+  transform: translateY(-1px);
+  filter: brightness(1.2);
 }
 
-.btn:active {
-  transform: translateY(0);
-}
-
-/* Warna tombol dibuat padat (bukan transparan tipis lagi) */
+/* WARNA DIKUNCI SOLID (Tidak Transparan Tipis Lagi) */
 .btn-biasa {
-  background-color: #38bdf8;
-  border-color: #7dd3fc;
+  background-color: #29b6f6 !important;
+  border-color: #4fc3f7;
 }
 
 .btn-lebaran {
-  background-color: #2ecc71;
-  border-color: #58d68d;
+  background-color: #2ecc71 !important;
+  border-color: #40e0d0;
 }
 
 .btn-cinta {
-  background-color: #ff477e;
-  border-color: #ff7597;
+  background-color: #ff477e !important;
+  border-color: #ff6b95;
 }
 
 .btn-ultah {
-  background-color: #be95c4;
-  border-color: #dfc2e6;
+  background-color: #b784bf !important;
+  border-color: #d2a7da;
 }
 
 .btn-secondary {
-  background-color: #475569;
-  border-color: #64748b;
+  background-color: #4f5d73 !important;
+  border-color: #6c7a93;
 }
 
 /* ==========================================
-   4. INPUT & KOTAK SURAT
+   4. INPUT, KOTAK SURAT & PALET KUE
    ========================================== */
 .button-group {
   display: flex;
-  gap: 10px;
-  max-width: 340px;
-  margin: 20px auto 0 auto;
+  gap: 8px;
+  max-width: 320px;
+  margin: 15px auto 0 auto;
 }
 
 .button-group .btn {
@@ -155,16 +154,16 @@ p {
 
 .input-ucapan {
   width: 100%;
-  max-width: 340px;
-  height: 100px;
-  padding: 12px;
+  max-width: 320px;
+  height: 90px;
+  padding: 10px;
   border-radius: 8px;
-  border: 2px solid #475569;
+  border: 2px solid #4f5d73;
   background-color: rgba(255, 255, 255, 0.05);
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
   resize: none;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 15px auto;
   outline: none;
   display: block;
 }
@@ -174,37 +173,37 @@ p {
 }
 
 .surat-box {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1.5px dashed rgba(255, 255, 255, 0.3);
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+  padding: 15px;
   border-radius: 8px;
-  max-width: 340px;
-  margin: 10px auto;
-  min-height: 80px;
+  max-width: 320px;
+  margin: 8px auto;
+  min-height: 70px;
   word-wrap: break-word;
 }
 
 .kue-wadah {
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .kue-svg {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 }
 
 .palet-warna {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 15px;
 }
 
 .kotak-warna {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid #fff;
