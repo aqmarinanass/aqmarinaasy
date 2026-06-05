@@ -91,7 +91,7 @@ p {
   padding: 12px !important;           
   margin: 0 auto 12px auto !important;   
   max-width: 320px !important;         
-  border: 2px solid transparent !important; /* Biar lebih tegas */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 12px !important;
   font-size: 16px !important;
   font-weight: 600 !important;
@@ -99,7 +99,19 @@ p {
   transition: all 0.3s ease !important;
   color: #ffffff !important; 
   
-  background-color: #4f5d73 !important; /* Default abu-abu */
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+.btn-tema {
+  background-color: color-mix(in srgb, var(--warna-neon), transparent 70%) !important;
+  border-color: var(--warna-neon) !important;
+}
+
+.btn:hover {
+  background-color: var(--warna-neon) !important;
+  transform: translateY(-2px);
+}
 }
 
 /* WARNA SOLID (Jreng dan Tidak Transparan) */
