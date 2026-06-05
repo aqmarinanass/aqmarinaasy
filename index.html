@@ -1,4 +1,186 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>deepwishzhome</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#home" class="mylogo">
+    <span class="deep">Deep</span><span class="wishz">Wishz</span>
+</a>
+        <div class="menu-toggle" id="menu-toggle">
+    ☰
+</div>
+        <nav class="navbar">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT US</a>
+    <a href="product.html">PRODUCT</a>
+    <a href="#contact">CONTACT</a>
+</nav>
+    </header>
+    <section id="home" class="home">
+        <div class="content">
+            <div class="text-content">
+            
+            <h3>Hi, Everyone!</h3>
+            <h1>
+    We Are <span class="brand-name">DeepWishz</span>
+</h1>
+            <h3>Words that linger</h3><br>
+            <p>Have you ever wondered how to make meaningful memories on a special day?<br>
+            Deepwishz, a place where simple wishes turn into meaningful memories, written with warmth, sincerity, and love.</p>
+        </div>
+        <img src="logo.png" alt="DeepWishz Logo" class="profile-img">
+        </div>
+    </section>
+
+    <section class="philosophy">
+
+    <h2>The Meaning Behind Our Logo</h2>
+
+    <div class="philosophy-grid">
+
+        <div class="card">
+            <h3>Three Layers Cake</h3>
+            <p>Represents growth and process. Every wish is built layer by layer through prayer, effort, and time.</p>
+        </div>
+
+        <div class="card">
+            <h3>Green Outline</h3>
+            <p>Symbolizes sustainability and hopes that continue to grow with health and positivity.</p>
+        </div>
+
+        <div class="card">
+            <h3>DeepWishz Text</h3>
+            <p>The core of every celebration. Wishes are the heart of meaningful memories.</p>
+        </div>
+
+        <div class="card">
+            <h3>Letter Z</h3>
+            <p>Represents uniqueness, creativity, and a modern identity.</p>
+        </div>
+
+        <div class="card">
+            <h3>Candle</h3>
+            <p>A symbol of guidance, hope, and light among countless dreams.</p>
+        </div>
+
+        <div class="card">
+            <h3>Pink Glow</h3>
+            <p>Represents warmth, affection, sincerity, and positive energy.</p>
+        </div>
+
+    </div>
+
+</section>
+    
+    <section id="about" class="about">
+
+    <div class="about-box">
+
+        <h1>About Us</h1>
+
+        <div class="canva-container">
+            <iframe
+                loading="lazy"
+                src="https://www.canva.com/design/DAHLImOEqpw/Sf_So7aJ3PQpfH4viDD_Cw/view?embed"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+
+</section>
+
+    <section id="contact" class="contact">
+
+    <h2>Help & Support</h2>
+
+    <div class="contact-wrapper">
+
+        <div class="contact-item">
+            <button class="contact-btn" onclick="toggleMenu('waMenu')">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WA</span>
+            </button>
+
+            <div class="contact-menu" id="waMenu">
+                <a href="https://wa.me/6281385671715">Hafshah</a>
+                <a href="https://wa.me/6281218322422">Nurul</a>
+                <a href="https://wa.me/6287811036004">Aftiya</a>
+                <a href="https://wa.me/6287899275730">Zephania</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <button class="contact-btn" onclick="toggleMenu('igMenu')">
+                <i class="fa-brands fa-instagram"></i>
+                <span>IG</span>
+            </button>
+
+            <div class="contact-menu" id="igMenu">
+                <a href="https://www.instagram.com/hpcaaa?igsh=MWM3N2htbjhyMmc4dQ==">Hafshah</a>
+                <a href="https://www.instagram.com/qmaa.nnrul?igsh=cXN6amhiMmFhaXcz">Nurul</a>
+                <a href="https://www.instagram.com/aftiyapw?igsh=c2tyMHh5ZDlyNDlw">Aftiya</a>
+                <a href="https://instagram.com/acc4">Zephania</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <button class="contact-btn" onclick="toggleMenu('emailMenu')">
+                <i class="fa-regular fa-envelope"></i>
+                <span>Email</span>
+            </button>
+
+            <div class="contact-menu" id="emailMenu">
+                <a href="mailto:hafshahfadiyah915@gmail.com">Hafshah</a>
+                <a href="mailto:b@gmail.com">Nurul</a>
+                <a href="mailto:aftiyapangestika10@gmail.com">Aftiya</a>
+                <a href="mailto:d@gmail.com">Zephania</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+   
+    <script>
+
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.querySelector(".navbar");
+
+menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
+
+</script>
+
+    <script>
+function toggleMenu(id) {
+    const menu = document.getElementById(id);
+
+    document.querySelectorAll('.contact-menu').forEach(m => {
+        if (m.id !== id) m.classList.remove("active");
+    });
+
+    menu.classList.toggle("active");
+}
+</script>
+</body>
+    
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
