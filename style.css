@@ -1,152 +1,222 @@
+/* ==========================================
+   1. PENGATURAN UTAMA & VARIABEL TEMA
+   ========================================== */
+:root {
+  /* Default / Variabel Cadangan */
+  --bg-utama: #1a1a1a;
+  --bg-container: #22252a;
+  --warna-neon: #00ffff; /* Default biru cyan */
+  --warna-teks: #ffffff;
+}
+
+/* Tema Biasa / Kasual (Biru Cyan) */
+body.tema-biasa {
+  --bg-utama: #121824;
+  --bg-container: #1e293b;
+  --warna-neon: #38bdf8; 
+  --warna-teks: #f8fafc;
+}
+
+/* Tema Lebaran (Hijau) */
+body.tema-lebaran {
+  --bg-utama: #0f291e;
+  --bg-container: #173f2f;
+  --warna-neon: #2ecc71; 
+  --warna-teks: #f0fff4;
+}
+
+/* Tema Ungkapan Cinta (Pink / Merah Muda) */
+body.tema-cinta {
+  --bg-utama: #2d142c;
+  --bg-container: #510a32;
+  --warna-neon: #ff477e; 
+  --warna-teks: #fff0f5;
+}
+
+/* Tema Ulang Tahun (Ungu / Kuning Ceria) */
+body.tema-ultah {
+  --bg-utama: #231942;
+  --bg-container: #5e548e;
+  --warna-neon: #be95c4; 
+  --warna-teks: #e0b1cb;
+}
+
+/* Reset Dasar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ffffff; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    background-color: #0b132b; 
+  background-color: var(--bg-utama);
+  color: var(--warna-teks);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: background-color 0.4s ease;
 }
 
-
+/* ==========================================
+   2. CONTAINER UTAMA (EFEK NEON DINAMIS)
+   ========================================== */
 .container {
-    background-color: #1c2541; 
-    padding: 35px 30px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 500px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid #4ea8de;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #4ea8de, 
-                0 0 40px rgba(78, 168, 222, 0.4), 
-                inset 0 0 15px rgba(78, 168, 222, 0.3);
-    transition: all 0.4s ease;
-}
-.container:hover {
-    transform: translateY(-5px);
-}
-
-/* === TOMBOL BERDAMPINGAN === */
-.button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+  background-color: var(--bg-container);
+  width: 100%;
+  max-width: 480px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  text-align: center;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  
+  /* Di sini rahasianya: warna shadow otomatis mengikuti --warna-neon */
+  box-shadow: 0 0 25px var(--warna-neon);
 }
 
 h1, h2 {
-    color: #4ea8de; 
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-shadow: 0 0 8px #4ea8de;
-    transition: all 0.4s ease;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 p {
-    color: #dbdbdb; 
-    margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  opacity: 0.9;
 }
 
+/* Fungsi Utility untuk Menyembunyikan Menu */
+.hidden {
+  display: none !important;
+}
+
+/* ==========================================
+   3. TOMBOL / BUTTONS
+   ========================================== */
 .btn {
-    color: #0b132b;
-    border: none;
-    padding: 12px 25px;
-    font-size: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 0; /* Dimatikan margin-nya agar diatur oleh gap flexbox */
-    transition: all 0.3s;
-    font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+  color: #1e293b;
 }
-.btn:hover { 
-    transform: scale(1.05); 
-    filter: brightness(1.2);
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
-.btn-lebaran { background-color: #7bed9f; color: #0b132b; } 
-.btn-cinta { background-color: #ffb6c1; color: #0b132b; }   
-.btn-ultah { background-color: #ff7ff5; color: white; }     
-.btn-biasa { background-color: #4ea8de; color: #0b132b; }   
-
-.btn-secondary { background-color: #3a506b; color: white; }
-.btn-secondary:hover { background-color: #5c718e; }
-
-.hidden { display: none !important; }
-
-/* KUE & PALET */
-.kue-wadah { margin: 15px auto; width: 140px; }
-.kue-svg { width: 100%; height: auto; }
-.palet-warna { display: flex; justify-content: center; gap: 10px; margin: 15px 0; }
-.kotak-warna {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
+.btn:active {
+  transform: translateY(0);
 }
-.kotak-warna:hover { transform: scale(1.2); }
 
-/* INPUT & KOTAK SURAT */
+/* Variasi Warna Tombol */
+.btn-biasa {
+  background-color: #38bdf8;
+  color: #fff;
+}
+
+.btn-lebaran {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.btn-cinta {
+  background-color: #ff477e;
+  color: #fff;
+}
+
+.btn-ultah {
+  background-color: #be95c4;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #475569;
+  color: #fff;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-group .btn {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   4. AREA INPUT & BOX SURAT
+   ========================================== */
 .input-ucapan {
-    width: 90%;
-    height: 80px;
-    padding: 10px;
-    border: 1px solid #3a506b;
-    border-radius: 10px;
-    font-family: inherit;
-    resize: none;
-    margin-top: 10px;
-    background-color: #0b132b;
-    color: white;
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #475569;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 15px;
+  resize: none;
+  margin-bottom: 20px;
+  outline: none;
 }
+
+.input-ucapan:focus {
+  border-color: var(--warna-neon);
+}
+
 .surat-box {
-    border: 2px dashed #4ea8de;
-    background-color: #151d33;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 15px;
-    text-align: left;
-}
-#tampilan-ucapan-desain { color: #56cfe1; }
-
-/* === NEON DINAMIS MENGIKUTI TEMA AKAN AKTIF DI SINI === */
-body.tema-lebaran .container {
-    border-color: #7bed9f;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #7bed9f, 
-                0 0 40px rgba(123, 237, 159, 0.4), 
-                inset 0 0 15px rgba(123, 237, 159, 0.3);
-}
-body.tema-lebaran h1, body.tema-lebaran h2 {
-    color: #7bed9f; text-shadow: 0 0 8px #7bed9f;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  min-height: 80px;
+  word-wrap: break-word;
 }
 
-body.tema-cinta .container {
-    border-color: #ffb6c1;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #ffb6c1, 
-                0 0 40px rgba(255, 182, 193, 0.4), 
-                inset 0 0 15px rgba(255, 182, 193, 0.3);
-}
-body.tema-cinta h1, body.tema-cinta h2 {
-    color: #ffb6c1; text-shadow: 0 0 8px #ffb6c1;
+/* ==========================================
+   5. FITUR KUE (UNTUK TEMA ULTAH)
+   ========================================== */
+.kue-wadah {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
-body.tema-ultah .container {
-    border-color: #ff7ff5;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
-                0 0 20px #ff7ff5, 
-                0 0 40px rgba(255, 127, 245, 0.4), 
-                inset 0 0 15px rgba(255, 127, 245, 0.3);
+.kue-svg {
+  width: 100px;
+  height: 100px;
 }
-body.tema-ultah h1, body.tema-ultah h2 {
-    color: #ff7ff5; text-shadow: 0 0 8px #ff7ff5;
+
+.palet-warna {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.kotak-warna {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: transform 0.2s;
+}
+
+.kotak-warna:hover {
+  transform: scale(1.15);
 }
