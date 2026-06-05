@@ -26,6 +26,42 @@ body {
                 inset 0 0 15px rgba(123, 237, 159, 0.3);
 }
 
+.tema-lebaran .container {
+    border-color: #7bed9f;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                0 0 20px #7bed9f, 
+                0 0 40px rgba(123, 237, 159, 0.4), 
+                inset 0 0 15px rgba(123, 237, 159, 0.3);
+}
+.tema-lebaran h1, .tema-lebaran h2 {
+    color: #7bed9f;
+    text-shadow: 0 0 8px #7bed9f;
+}
+
+.tema-cinta .container {
+    border-color: #ffb6c1;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                0 0 20px #ffb6c1, 
+                0 0 40px rgba(255, 182, 193, 0.4), 
+                inset 0 0 15px rgba(255, 182, 193, 0.3);
+}
+.tema-cinta h1, .tema-cinta h2 {
+    color: #ffb6c1;
+    text-shadow: 0 0 8px #ffb6c1;
+}
+
+.tema-ultah .container {
+    border-color: #ff7ff5;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                0 0 20px #ff7ff5, 
+                0 0 40px rgba(255, 127, 245, 0.4), 
+                inset 0 0 15px rgba(255, 127, 245, 0.3);
+}
+.tema-ultah h1, .tema-ultah h2 {
+    color: #ff7ff5;
+    text-shadow: 0 0 8px #ff7ff5;
+}
+
 .tema-cinta .container {
     border-color: #ffb6c1;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
