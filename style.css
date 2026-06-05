@@ -1,41 +1,46 @@
-
+/* ==========================================
+   1. PENYIMPANAN VARIABEL WARNA (CSS VARIABLES)
+   ========================================== */
 :root {
-  bg-utama: #1a1a1a;
-  bg-container: #22252a;
-  warna-neon: #00ffff;
-  warna-teks: #ffffff;
+  --bg-utama: #1a1a1a;
+  --bg-container: rgba(34, 37, 42, 0.75);
+  --warna-neon: #00ffff;
+  --warna-teks: #ffffff;
 }
 
-body.tema-biasa {
-  bg-utama: #121824;
-  bg-container: #1e293b;
-  warna-neon: #38bdf8; 
-  warna-teks: #f8fafc;
+/* Mengikuti selector data-theme dari JavaScript */
+body[data-theme="biasa"] {
+  --bg-utama: #121824;
+  --bg-container: rgba(30, 41, 59, 0.75);
+  --warna-neon: #38bdf8; 
+  --warna-teks: #f8fafc;
 }
 
-body.tema-lebaran {
-  bg-utama: #0f291e;
-  bg-container: #173f2f;
-  warna-neon: #2ecc71; 
-  warna-teks: #f0fff4;
+body[data-theme="lebaran"] {
+  --bg-utama: #0f291e;
+  --bg-container: rgba(23, 63, 47, 0.75);
+  --warna-neon: #2ecc71; 
+  --warna-teks: #f0fff4;
 }
 
-body.tema-cinta {
-  bg-utama: #2d142c;
-  bg-container: #510a32;
-  warna-neon: #ff477e; 
-  warna-teks: #fff0f5;
+body[data-theme="cinta"] {
+  --bg-utama: #2d142c;
+  --bg-container: rgba(81, 10, 50, 0.75);
+  --warna-neon: #ff477e; 
+  --warna-teks: #fff0f5;
 }
 
-body.tema-ultah {
-  bg-utama: #231942;
-  bg-container: #5e548e;
-  warna-neon: #be95c4; 
-  warna-teks: #e0b1cb;
+body[data-theme="ultah"] {
+  --bg-utama: #231942;
+  --bg-container: rgba(94, 84, 142, 0.75);
+  --warna-neon: #be95c4; 
+  --warna-teks: #e0b1cb;
 }
 
-
-{
+/* ==========================================
+   2. PENGATURAN LAYOUT UTAMA
+   ========================================== */
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -43,8 +48,8 @@ body.tema-ultah {
 }
 
 body {
-  background-color: var(bg-utama);
-  color: var(warna-teks);
+  background-color: var(--bg-utama);
+  color: var(--warna-teks);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -53,17 +58,20 @@ body {
   transition: background-color 0.4s ease;
 }
 
+/* Kotak Utama dengan Efek Kaca Blur & Pendaran Neon */
 .container {
-  background-color: var(bg-container);
+  background-color: var(--bg-container);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   width: 100%;
   max-width: 480px;
   padding: 30px 25px;
   border-radius: 16px;
   text-align: center;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
-  
- 
-  box-shadow: 0 0 25px var(warna-neon);
+  transition: all 0.4s ease;
+  border: 1.5px solid var(--warna-neon);
+  box-shadow: 0 0 25px var(--warna-neon), inset 0 0 10px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
 h1, h2 {
@@ -77,61 +85,73 @@ p {
   opacity: 0.9;
 }
 
-
 .hidden {
   display: none !important;
 }
 
-
+/* ==========================================
+   3. TOMBOL GLASSMORPHISM (TRANSPARAN KACA)
+   ========================================== */
 .btn {
   display: block;     
   width: 100%;       
   padding: 14px;
   margin-bottom: 12px;
-  border: none;
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  background-color: #f8fafc;
-  color: #1e293b;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important; /* Teks dikunci putih semua agar estetik */
+  backdrop-filter: blur(5px);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
 }
 
 .btn:active {
   transform: translateY(0);
 }
 
+/* Tombol Khusus yang Menyala Mengikuti Warna Tema */
 .btn-biasa {
-  background-color: #38bdf8;
-  color: #fff;
+  background-color: rgba(56, 189, 248, 0.25);
+  border-color: rgba(56, 189, 248, 0.4);
 }
+.btn-biasa:hover { background-color: rgba(56, 189, 248, 0.4); }
 
 .btn-lebaran {
-  background-color: #2ecc71;
-  color: #fff;
+  background-color: rgba(46, 204, 113, 0.25);
+  border-color: rgba(46, 204, 113, 0.4);
 }
+.btn-lebaran:hover { background-color: rgba(46, 204, 113, 0.4); }
 
 .btn-cinta {
-  background-color: #ff477e;
-  color: #fff;
+  background-color: rgba(255, 71, 126, 0.25);
+  border-color: rgba(255, 71, 126, 0.4);
 }
+.btn-cinta:hover { background-color: rgba(255, 71, 126, 0.4); }
 
 .btn-ultah {
-  background-color: #be95c4;
-  color: #fff;
+  background-color: rgba(190, 149, 196, 0.25);
+  border-color: rgba(190, 149, 196, 0.4);
 }
+.btn-ultah:hover { background-color: rgba(190, 149, 196, 0.4); }
 
 .btn-secondary {
-  background-color: #475569;
-  color: #fff;
+  background-color: rgba(71, 85, 105, 0.3);
+  border-color: rgba(71, 85, 105, 0.4);
 }
+.btn-secondary:hover { background-color: rgba(71, 85, 105, 0.5); }
 
+/* ==========================================
+   4. DEKORASI INPUT & PREVIEW SURAT
+   ========================================== */
 .button-group {
   display: flex;
   gap: 10px;
@@ -158,17 +178,18 @@ p {
 }
 
 .input-ucapan:focus {
-  border-color: var(warna-neon);
+  border-color: var(--warna-neon);
 }
 
 .surat-box {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px dashed rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1.5px dashed var(--warna-neon); /* Garis putus-putus otomatis sewarna neon aktif */
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-top: 10px;
   min-height: 80px;
   word-wrap: break-word;
+  color: #ffffff;
 }
 
 .kue-wadah {
