@@ -24,20 +24,20 @@ function setTema(namaTema) {
     const inputInstan = document.getElementById('teks-input-instan');
 
     if (namaTema === 'lebaran') {
-        if(judulUtama) judulUtama.innerText = "Tema: Idul Fitri 🌙";
+        if(judulUtama) judulUtama.innerText = "Tema: Idul Fitri ";
         if(hiasanAtas) hiasanAtas.innerText = "🌙 ✨ 🕌 ✨ 🌙";
-        if(hiasanBawah) hiasanBawah.innerText = "✨ Ketupat & Berkah ✨";
+        if(hiasanBawah) hiasanBawah.innerText = "✨ Ketupat & Berkah ✨ ";
     } else if (namaTema === 'cinta') {
-        if(judulUtama) judulUtama.innerText = "Tema: Ungkapan Cinta ❤️";
+        if(judulUtama) judulUtama.innerText = "Tema: Ungkapan Cinta ";
         if(hiasanAtas) hiasanAtas.innerText = "❤️ ✨ 🎀 ✨ ❤️";
         if(hiasanBawah) hiasanBawah.innerText = "💖 Selalu Bersamamu 💖";
     } else if (namaTema === 'ultah') {
-        if(judulUtama) judulUtama.innerText = "Tema: Ulang Tahun 🎂";
+        if(judulUtama) judulUtama.innerText = "Tema: Ulang Tahun ";
         if(hiasanAtas) hiasanAtas.innerText = "🎈 ✨ 🎂 ✨ 🎈";
         if(hiasanBawah) hiasanBawah.innerText = "🎉 Tiup Lilinnya! 🎉";
         if(kueInstan) kueInstan.style.fill = "#ff7ff5";
     } else {
-        if(judulUtama) judulUtama.innerText = "Tema: Kasual ✉️";
+        if(judulUtama) judulUtama.innerText = "Tema: Kasual ";
         if(hiasanAtas) hiasanAtas.innerText = "✉️ ✨ ⭐ ✨ ✉️";
         if(hiasanBawah) hiasanBawah.innerText = "✨ Salam Hangat ✨";
     }
