@@ -1,5 +1,5 @@
 // ==========================================
-// 1. FUNGSI NAVIGASI HALAMAN (ANTI CRASH)
+// 1. FUNGSI NAVIGASI HALAMAN (URUTAN PAS)
 // ==========================================
 
 function mulaiAplikasi() {
@@ -34,21 +34,21 @@ function resetMenu() {
 }
 
 // ==========================================
-// 2. FUNGSI PENGATURAN TEMA
+// 2. FUNGSI PENGATURAN TEMA (FIX: JALAN KE MENU UTAMA)
 // ==========================================
 
 function setTema(namaTema) {
-    // Ubah class body untuk ganti background warna di CSS
     if (document.body) {
         document.body.className = 'tema-' + namaTema;
     }
 
     const menuTema = document.getElementById('menu-tema');
     const menuUtama = document.getElementById('menu-utama');
+    
+    // Sembunyikan menu tema, lalu tampilkan menu utama (pilihan mode buat)
     if (menuTema) menuTema.classList.add('hidden');
     if (menuUtama) menuUtama.classList.remove('hidden');
 
-    // Ubah teks judul menu utama sesuai tema biar keren
     const judulUtama = document.getElementById('judul-utama');
     if (judulUtama) {
         if (namaTema === 'lebaran') judulUtama.innerText = "Tema: Lebaran Fitri";
@@ -66,7 +66,8 @@ function pilihMode(mode) {
     const menuUtama = document.getElementById('menu-utama');
     if (menuUtama) menuUtama.classList.add('hidden');
     
-    let temaAktif = 'biasas';
+    // FIX: Typo biasas sudah dibuang menjadi biasa
+    let temaAktif = 'biasa';
     if (document.body && document.body.classList) {
         if (document.body.classList.contains('tema-lebaran') || document.body.className.includes('tema-lebaran')) {
             temaAktif = 'lebaran';
@@ -128,7 +129,6 @@ function pilihWarnaKue(warna) {
     const kueBadanInstan = document.getElementById('kue-badan-instan');
     if (kueBadanDesain) kueBadanDesain.setAttribute('fill', warna);
     if (kueBadanInstan) kueBadanInstan.setAttribute('fill', warna);
-    // Simpan warna di body agar terbawa saat bikin link share
     if (document.body) document.body.setAttribute('data-kue-warna', warna);
 }
 
@@ -175,9 +175,111 @@ function bagikanLink(mode) {
     }
 
     const warnaKue = document.body ? (document.body.getAttribute('data-kue-warna') || '#ff7ff5') : '#ff7ff5';
-    
-    // Bikin link otomatis menggunakan URL web saat ini
     const baseUrl = window.location.origin + window.location.pathname;
     const linkHasil = `${baseUrl}?tema=${temaAktif}&mode=${mode}&pesan=${encodeURIComponent(pesan)}&kue=${encodeURIComponent(warnaKue)}`;
 
-    // Salin otomatis ke clipboard hp
+    navigator.clipboard.writeText(linkHasil).then(() => {
+        alert('Link berhasil disalin! Silakan kirimkan ke temanmu.');
+    }).catch(() => {
+        alert('Gagal menyalin otomatis. Ini link kamu:\n\n' + linkHasil);
+    });
+}
+
+// ==========================================
+// 6. SISTEM DETEKSI OTOMATIS PENERIMA LINK
+// ==========================================
+
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramTema = urlParams.get('tema');
+    const paramMode = urlParams.get('mode');
+    const paramPesan = urlParams.get('pesan');
+    const paramKue = urlParams.get('kue');
+
+    if (paramTema && paramPesan && paramMode) {
+        const halAwal = document.getElementById('halaman-awal');
+        const menuTema = document.getElementById('menu-tema');
+        const menuUtama = document.getElementById('menu-utama');
+        if (halAwal) halAwal.classList.add('hidden');
+        if (menuTema) menuTema.classList.add('hidden');
+        if (menuUtama) menuUtama.classList.add('hidden');
+        
+        document.body.className = 'tema-' + paramTema;
+
+        if (paramKue) {
+            pilihWarnaKue(paramKue);
+        }
+
+        if (paramMode === 'desain') {
+            const areaDesain = document.getElementById('area-desain');
+            if (areaDesain) areaDesain.classList.remove('hidden');
+            
+            const tampilan = document.getElementById('tampilan-ucapan-desain');
+            if (tampilan) tampilan.innerText = paramPesan;
+            
+            const inputD = document.getElementById('teks-input-desain');
+            const btnS = document.getElementById('btn-share-desain');
+            if (inputD) inputD.style.display = 'none';
+            if (btnS) btnS.style.display = 'none';
+            
+            const petunjuk = document.querySelector('#area-desain p');
+            const btnK = document.querySelector('#area-desain .btn-secondary');
+            if (petunjuk) petunjuk.style.display = 'none';
+            if (btnK) btnK.style.display = 'none';
+
+            if (paramTema === 'ultah') {
+                const fKue = document.getElementById('fitur-kue-desain');
+                if (fKue) fKue.classList.remove('hidden');
+                const teksKue = document.querySelector('#fitur-kue-desain p');
+                const paletKue = document.querySelector('#fitur-kue-desain .palet-warna');
+                if (teksKue) teksKue.style.display = 'none';
+                if (paletKue) paletKue.style.display = 'none';
+            }
+        } else if (paramMode === 'instan') {
+            const areaInstan = document.getElementById('area-instan');
+            if (areaInstan) areaInstan.classList.remove('hidden');
+            
+            const tampilan = document.getElementById('tampilan-ucapan-instan');
+            if (tampilan) tampilan.innerText = paramPesan;
+            
+            const inputI = document.getElementById('teks-input-instan');
+            const btnS = document.getElementById('btn-share-instan');
+            if (inputI) inputI.style.display = 'none';
+            if (btnS) btnS.style.display = 'none';
+            
+            const petunjuk = document.querySelector('#area-instan p');
+            const btnK = document.querySelector('#area-instan .btn-secondary');
+            if (petunjuk) petunjuk.style.display = 'none';
+            if (btnK) btnK.style.display = 'none';
+
+            const hiasanAtas = document.getElementById('hiasan-atas-instan');
+            const hiasanBawah = document.getElementById('hiasan-bawah-instan');
+            if (hiasanAtas && hiasanBawah) {
+                if (paramTema === 'lebaran') {
+                    hiasanAtas.innerText = "🌙 Selamat Hari Raya Idul Fitri 🌙";
+                    hiasanBawah.innerText = "✨ Mohon Maaf Lahir & Batin ✨";
+                } else if (paramTema === 'cinta') {
+                    hiasanAtas.innerText = "💖 Special For You 💖";
+                    hiasanBawah.innerText = "🌹 I Love You So Much 🌹";
+                } else if (paramTema === 'ultah') {
+                    hiasanAtas.innerText = "🎉 Happy Birthday! 🎉";
+                    hiasanBawah.innerText = "🎂 Wish You All The Best 🎂";
+                    const fKueI = document.getElementById('fitur-kue-instan');
+                    if (fKueI) fKueI.classList.remove('hidden');
+                }
+            }
+        }
+    } else {
+        const halAwal = document.getElementById('halaman-awal');
+        const menuTema = document.getElementById('menu-tema');
+        const menuUtama = document.getElementById('menu-utama');
+        const areaDesain = document.getElementById('area-desain');
+        const areaInstan = document.getElementById('area-instan');
+
+        if (halAwal) halAwal.classList.remove('hidden');
+        if (menuTema) menuTema.classList.add('hidden');
+        if (menuUtama) menuUtama.classList.add('hidden');
+        if (areaDesain) areaDesain.classList.add('hidden');
+        if (areaInstan) areaInstan.classList.add('hidden');
+    }
+});
