@@ -3,30 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator Ucapan Scratch</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Surat Ucapan </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffeef2;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #ff6b8b;
+        }
+
+        .btn {
+            background-color: #ff6b8b;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #ff4771;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: #747d8c;
+        }
+        .btn-secondary:hover {
+            background-color: #57606f;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .kue-wadah {
+            margin: 20px auto;
+            width: 150px;
+            cursor: pointer;
+        }
+
+        .kue-svg {
+            width: 100%;
+            height: auto;
+            transition: fill 0.3s;
+        }
+
+        .stiker-box {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 30px;
+        }
+
+        .stiker {
+            cursor: grab;
+            user-select: none;
+        }
+
+        .surat-box {
+            border: 2px dashed #ff6b8b;
+            background-color: #fff5f7;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            min-height: 100px;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
 
-    <div id="halaman-pengirim" class="kotak-utama">
-        <h2>Buat Ucapan Istimewa mu</h2>
-        
-        <textarea id="input-pesan" placeholder="Ketik ucapanmu di sini..."></textarea>
-        
-        <select id="pilihan-tema">
-            <option value="biasa">Tema: Biasa (</option>
-            <option value="lebaran">Tema: Lebaran </option>
-            <option value="ultah">Tema: Ulang Tahun </option>
-            <option value="cinta">Tema: Cinta </option>
-        </select>
-        
-        <button onclick="buatLink()">Salin Link Ucapan</button>
+    <div class="container">
+        <div id="menu-utama">
+            <h1>Pilih Mode Desain </h1>
+            <p>Silakan pilih bagaimana kamu ingin membuat ucapan ini:</p>
+            <button class="btn" onclick="pilihMode('desain')">ingin membuat desain</button>
+            <button class="btn btn-secondary" onclick="pilihMode('instan')">menggunakan desain yang tersedia</button>
+        </div>
+
+        <div id="area-desain" class="hidden">
+            <h1>Desain Kue & Suratmu </h1>
+            <p>1. Klik kue di bawah untuk mengganti warnanya!</p>
+            
+            <div class="kue-wadah" onclick="gantiWarnaKue()">
+                <svg class="kue-svg" viewBox="0 0 100 100">
+                    <rect x="47" y="10" width="6" height="15" fill="#ffa500"/>
+                    <circle cx="50" cy="5" r="4" fill="#ff4500"/>
+                    <path id="kue-badan" d="M20,50 L80,50 L75,90 L25,90 Z" fill="#ffb6c1" stroke="#333" stroke-width="2"/>
+                    <path d="M18,50 Q30,40 40,50 Q50,40 60,50 Q70,40 82,50 L80,55 L20,55 Z" fill="#ffffff" stroke="#333" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <p>2. Ini area wadah surat ucapan kamu:</p>
+            <div class="surat-box">
+                <p style="color: #aaa; font-style: italic;">[ Tempel hiasan stiker di sini ]</p>
+            </div>
+
+            <p>3. Pilihan Stiker (Bisa diklik/disalin):</p>
+            <div class="stiker-box">
+                <span class="stiker">⭐</span>
+                <span class="stiker">❤️</span>
+                <span class="stiker">🎀</span>
+                <span class="stiker">🎈</span>
+            </div>
+            
+            <br>
+            <button class="btn btn-secondary" onclick="resetMenu()">Kembali</button>
+        </div>
+
+        <div id="area-instan" class="hidden">
+            <h1>Surat Ucapan Instan ✉️</h1>
+            <div class="surat-box">
+                <h3>Selamat Ulang Tahun! 🎉</h3>
+                <p>Semoga hari-harimu selalu dipenuhi dengan kebahagiaan, kesehatan, dan kesuksesan. Ini adalah desain surat instan yang sudah jadi khusus untukmu!</p>
+            </div>
+            <br>
+            <button class="btn btn-secondary" onclick="resetMenu()">Kembali</button>
+        </div>
     </div>
 
-    <div id="halaman-penerima" class="kotak-utama sembunyi">
-        <p id="output-pesan" class="teks-ucapan"></p>
-    </div>
+   {
+            document.getElementById('menu-utama').classList.add('hidden');
+            
+            if (mode === 'desain') {
+                document.getElementById('area-desain').classList.remove('hidden');
+            } 
+            else if (mode === 'instan') {
+                document.getElementById('area-instan').classList.remove('hidden');
+            }
+        }
 
-    <script src="script.js"></script>
+      {
+            document.getElementById('area-desain').classList.add('hidden');
+            document.getElementById('area-instan').classList.add('hidden');
+            document.getElementById('menu-utama').classList.remove('hidden');
+        }
+
+        const daftarWarna = ["#ffb6c1", "#ff7ff5", "#7bed9f", "#70a1ff", "#eccc68", "#ff6b81"];
+        let indeksWarna = 0;
+
+        function gantiWarnaKue() {
+            indeksWarna = (indeksWarna + 1) % daftarWarna.length;
+          document.getElementById('kue-badan').style.fill = daftarWarna[indeksWarna];
+        }
+    </script>
 </body>
 </html>
